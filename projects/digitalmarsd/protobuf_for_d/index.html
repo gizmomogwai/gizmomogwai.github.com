@@ -1,0 +1,65 @@
+<html>
+  <head>
+    <title>"Protobuf"</title>
+    <!-- %script{:type=>"text/javascript", :src=>"/jquery-1.4.1.min.js"} -->
+    <!-- %script{:type=>"text/javascript", :src=>"/jquery.easing-1.3.js"} -->
+    <!-- %script{:type=>"text/javascript", :src=>"/jquery.accordion.js"} -->
+    <link href='../../../assets/styles/style.css' rel='stylesheet' type='text/css'>
+    <!-- = "<script type=\"text/javascript\">$().ready(function(){$('#accordion').accordion({alwaysOpen: false,autoheight: false, header:'a.header'});});</script>" -->
+  </head>
+  <body>
+    <div id='all'>
+      <div id='nav'>      <div class='parentfirst first'><a href='../../../'>Home</a></div>
+      <div class='parent'><a href='../../'>Projects</a></div>
+      <div class='parentlast'><a href='../'>Digitalmars D</a></div>
+      <div class='current last'>Protobuf</div></div>
+      <div id='main'>
+        <h2 class='page'>&nbsp;</h2>
+        <div class='chapter'>
+          <div class='basic' id='accordion'>
+            <a class='header'>Story</a>
+            <div class='chapter'>
+              <p>
+                I did not get protobuf ... So I thought:
+                <ul>
+                  <li>Learn a little about the protobuf internals.</li>
+                  <li>See how to generate source with d.</li>
+                  <li>Use the parser combinator library to implement a not so minimal parser example.</li>
+                  <li>And create a useful library to interact with the rest of the world.</li>
+                </ul>
+                All at the same time.
+              </p>
+            </div>
+            <a class='header'>Implementation</a>
+            <div class='chapter'>
+              <p>
+                The project consists of several parts:
+                <ul>
+                  <li>some small helper classes that are kind of a runtime for the generated sources.</li>
+                  <li>some tests written in java to generate protobuf files which are used to check the results from the generator.</li>
+                  <li>the compiler itself (it is implemented by first writing a parser from scratch (I know ... dont do this at home and use the protobuf parser)).</li>
+                  <li>integration tests, that use the java-references to check if everything is compatible.</li>
+                </ul>
+              </p>
+              <p>
+                Please check the d examples in compiler/tests (e.g. the canonical addressbook tests for the generated api).
+              </p>
+            </div>
+            <a class='header'>Restrictions</a>
+            <div class='chapter'>
+              <p>
+                Neither the service part nor the extension part is currently implemented.
+              </p>
+            </div>
+            <a class='header'>Sources</a>
+            <div class='chapter'>
+              The sources are located in my private assembla repository. Feel free to contact me if you want to try them out.
+            </div>
+          </div>
+        </div>
+        &nbsp;
+      </div>
+      <div id='footer'>last modified: 2011-03-02</div>
+    </div>
+  </body>
+</html>
