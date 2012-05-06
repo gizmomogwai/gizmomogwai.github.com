@@ -3,84 +3,77 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>"Network Browser"</title>
-<!-- %script{:type=>"text/javascript", :src=>"/jquery-1.4.1.min.js"} --><!-- %script{:type=>"text/javascript", :src=>"/jquery.easing-1.3.js"} --><!-- %script{:type=>"text/javascript", :src=>"/jquery.accordion.js"} --><link href="../../../assets/styles/style.css" rel="stylesheet" type="text/css">
-<!-- = "<script type=\"text/javascript\">$().ready(function(){$('#accordion').accordion({alwaysOpen: false,autoheight: false, header:'a.header'});});</script>" -->
+<link href="../../../assets/styles/style.css" rel="stylesheet" type="text/css">
 </head>
-<body>
-    <div id="all">
-      <div id="nav">
+<body><div id="all">
+<div id="nav">
 <div class="parentfirst first"><a href="../../../">Home</a></div>
 <div class="parent"><a href="../../">Projects</a></div>
 <div class="parentlast"><a href="../">Android</a></div>
-      <div class="current last">Network Browser</div>
+    <div class="current last">Network Browser</div>
 </div>
-      <div id="main">
-        <h2 class="page"> </h2>
-        <div class="chapter">
-    <div class="basic" id="accordion">
-      <a class="header">Story</a>
-      <div class="chapter">
-        <p>
-          When working with OS X bonjour is everywhere. My machine alone has:
-          </p>
+<div id="main">
+<h2 class="page">Network Browser</h2>
+<div class="chapter">
+<a class="header">Story</a>
+<div class="chapter">
+  <p>
+    When working with OS X bonjour is everywhere. My machine alone has:
+    </p>
 <ul>
 <li>Apple File Sharing (afp, smb or ftp)</li>
-            <li>Screen Sharing (vnc)</li>
-            <li>World Wide Web (http or https)</li>
-            <li>clipshlpr (funny clipboard sharing from a program i recently purchased)</li>
-            <li>Secure File Sharing (sftp)</li>
-            <li>Network File System (nfs)</li>
-            <li>Secure Shell (ssh)</li>
-          </ul>
-          enabled.
-          When I come into my homenetwork, my media, download server and so on are also discoverable via bonjour. It is a technology that makes one simple thing in a good way.
-        
-        <p>
-          Unfortunately google does not provide a bonjour service on the android platform.
-          The networkbrowser is my try on doing the discovery part of bonjour (i dont support announcing right now) with std. java libraries in an extensible and android way.
-        </p>
-        <p>
-          First I thought, that something like 50 cent would be a reasonable price for such a basic and very useful application, but several months in the android market showed, that the android people normalyy dont like buy applications and so the network browser is now a free application (which is only fait, because most of the work was done by the jmdns guys).
-        </p>
-        <p>
-          For android 3. something I would really love to see zeroconf support integrated into the android platform by google.
-        </p>
-      </div>
-      <a class="header">Implementation</a>
-      <div class="chapter">
-        <p>
-          The networkbrowser simply browses through discoverable services and then tries to call seperately installable intents. I also provide some wrapper intents for:
-          </p>
+      <li>Screen Sharing (vnc)</li>
+      <li>World Wide Web (http or https)</li>
+      <li>clipshlpr (funny clipboard sharing from a program i recently purchased)</li>
+      <li>Secure File Sharing (sftp)</li>
+      <li>Network File System (nfs)</li>
+      <li>Secure Shell (ssh)</li>
+    </ul>
+    enabled.
+    When I come into my homenetwork, my media, download server and so on are also discoverable via bonjour. It is a technology that makes one simple thing in a good way.
+  
+  <p>
+    Unfortunately google does not provide a bonjour service on the android platform.
+    The networkbrowser is my try on doing the discovery part of bonjour (i dont support announcing right now) with std. java libraries in an extensible and android way.
+  </p>
+  <p>
+    First I thought, that something like 50 cent would be a reasonable price for such a basic and very useful application, but several months in the android market showed, that the android people normalyy dont like buy applications and so the network browser is now a free application (which is only fait, because most of the work was done by the jmdns guys).
+  </p>
+  <p>
+    For android 3. something I would really love to see zeroconf support integrated into the android platform by google.
+  </p>
+</div>
+<a class="header">Implementation</a>
+<div class="chapter">
+  <p>
+    The networkbrowser simply browses through discoverable services and then tries to call seperately installable intents. I also provide some wrapper intents for:
+    </p>
 <ul>
 <li>ssh - mapped to connectbot</li>
-            <li>ftp - mapped to fsync</li>
-            <li>rfb - (remote framebuffer or vnc) mapped to androidvnc (i hope my patch to androidvnc makes it into the next release)</li>
-            <li>http - mapped to the default browse intent</li>
-          </ul>
+      <li>ftp - mapped to fsync</li>
+      <li>rfb - (remote framebuffer or vnc) mapped to androidvnc (i hope my patch to androidvnc makes it into the next release)</li>
+      <li>http - mapped to the default browse intent</li>
+    </ul>
 </div>
-      <a class="header">How to extend</a>
-      <div class="chapter">
-        As an application developer you have to ways of communicating with the network browser:
-        <ul>
+<a class="header">How to extend</a>
+<div class="chapter">
+  As an application developer you have to ways of communicating with the network browser:
+  <ul>
 <li>
-            Provide an intent that is called from the network browser when the user selects an service.
-          </li>
-          <li>
-            Use the networkbrowser with startActivityForResult to get to the data of a service you want to connect to.
-          </li>
-        </ul>
-        Examples are coming.
-      </div>
-      <a class="header">Sources</a>
-      <div class="chapter">
-        The sources are located in my private svn repository, which i access with git.
-      </div>
-      
-    </div>
-  </div>
-         
-      </div>
-      <div id="footer">last modified: 2012-03-04</div>
-    </div>
-  </body>
+      Provide an intent that is called from the network browser when the user selects an service.
+    </li>
+    <li>
+      Use the networkbrowser with startActivityForResult to get to the data of a service you want to connect to.
+    </li>
+  </ul>
+  Examples are coming.
+</div>
+<a class="header">Sources</a>
+<div class="chapter">
+  The sources are located in my private svn repository, which i access with git.
+</div>
+</div> </div>
+<div id="footer">last modified: 2012-05-06 | Tags <a href="../../../sitemap/tags/#android" rel="tag">android</a>, <a href="../../../sitemap/tags/#zeroconf" rel="tag">zeroconf</a>, <a href="../../../sitemap/tags/#bonjour" rel="tag">bonjour</a>, <a href="../../../sitemap/tags/#plugins" rel="tag">plugins</a>, <a href="../../../sitemap/tags/#java" rel="tag">java</a>
+</div>
+</div></body>
 </html>
