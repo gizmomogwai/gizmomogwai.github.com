@@ -1,19 +1,30 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>"Cocoa"</title>
-<link href="../../assets/styles/style.css" rel="stylesheet" type="text/css">
+<script src="../../assets/jquery-1.7.2.min.js" type="text/javascript"></script><script src="../../assets/jquery.tagcanvas-1.17.1.min.js" type="text/javascript"></script><link href="../../assets/styles/style.css" rel="stylesheet" type="text/css">
+<meta charset="UTF-8" content="text/html; charset=UTF-8" http-equiv="content-type">
+<script type="text/javascript">
+      $(document).ready(function() {
+      $('canvas.tagCloud').tagcanvas({
+      maxSpeed : 0.05,
+      depth : 0.075,
+      weightMode: 'both',
+      weight: true,
+      wheelZoom: true,
+      weightGradient: {0: '#ffffff', 0.33:'#e2e4cb', 0.8:'#b4cb8a', 1:'#3e3e3e'},
+      outlineColour: "#ffffff",
+      outlineMethod: "colour"
+      });
+      });
+    </script>
 </head>
 <body><div id="all">
-<div id="nav">
-<div class="parentfirst first"><a href="../../">Home</a></div>
+<nav><div class="parentfirst first"><a href="../../">Home</a></div>
 <div class="parentlast"><a href="../">Projects</a></div>
     <div class="current">Cocoa</div>
     <div class="childfirst"><a href="hexqlplugin/">Hex QL Plugin</a></div>
-    <div class="childlast last"><a href="zooomr/">Zooomr Picasa Plugin</a></div>
-</div>
-<div id="main">
+    <div class="childlast last"><a href="zooomr/">Zooomr Picasa Plugin</a></div></nav><div id="main">
 <h2 class="page">Cocoa</h2>
 <div class="chapter">
 <p>
@@ -23,7 +34,6 @@
   I am dont particularly like XCode an Objective-C (although it has some cool constructs), so I have done only very view things specifically for OS-X.
 </p>
 </div> </div>
-<div id="footer">last modified: 2012-05-06 | Tags <a href="../../sitemap/tags/#osx" rel="tag">osx</a>, <a href="../../sitemap/tags/#cocoa" rel="tag">cocoa</a>, <a href="../../sitemap/tags/#ui" rel="tag">ui</a>
-</div>
+<footer>last modified: 2012-05-06 | Tags <a href="../../sitemap/tags/#osx" rel="tag">osx</a>, <a href="../../sitemap/tags/#cocoa" rel="tag">cocoa</a>, <a href="../../sitemap/tags/#ui" rel="tag">ui</a></footer>
 </div></body>
 </html>

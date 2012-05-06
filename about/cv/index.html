@@ -1,17 +1,28 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>"Curriculum Vitae"</title>
-<link href="../../assets/styles/style.css" rel="stylesheet" type="text/css">
+<script src="../../assets/jquery-1.7.2.min.js" type="text/javascript"></script><script src="../../assets/jquery.tagcanvas-1.17.1.min.js" type="text/javascript"></script><link href="../../assets/styles/style.css" rel="stylesheet" type="text/css">
+<meta charset="UTF-8" content="text/html; charset=UTF-8" http-equiv="content-type">
+<script type="text/javascript">
+      $(document).ready(function() {
+      $('canvas.tagCloud').tagcanvas({
+      maxSpeed : 0.05,
+      depth : 0.075,
+      weightMode: 'both',
+      weight: true,
+      wheelZoom: true,
+      weightGradient: {0: '#ffffff', 0.33:'#e2e4cb', 0.8:'#b4cb8a', 1:'#3e3e3e'},
+      outlineColour: "#ffffff",
+      outlineMethod: "colour"
+      });
+      });
+    </script>
 </head>
 <body><div id="all">
-<div id="nav">
-<div class="parentfirst first"><a href="../../">Home</a></div>
+<nav><div class="parentfirst first"><a href="../../">Home</a></div>
 <div class="parentlast"><a href="../">About</a></div>
-    <div class="current last">Curriculum Vitae</div>
-</div>
-<div id="main">
+    <div class="current last">Curriculum Vitae</div></nav><div id="main">
 <h2 class="page">Christian Köstlin</h2>
 <div class="chapter">
 <table>
@@ -35,7 +46,7 @@
 <tr>
 <td>Web:</td>
     <td>
-      <a href="http://gizmomogwai.dyndns.org/~gizmo">http://gizmomogwai.dyndns.org/~gizmo</a>
+      <!-- / %a{:href=>'http://gizmomogwai.dyndns.org/~gizmo'} http://gizmomogwai.dyndns.org/~gizmo -->
       <a href="http://gizmomogwai.github.com">http://gizmomogwai.github.com</a>
     </td>
   </tr>
@@ -43,18 +54,31 @@
 <a class="header">Preferrences</a>
 <div class="chapter">
   <ul>
-<li>java, c++, ruby</li>
-    <li>eclipse, intellij idea, emacs, xcode, visual studio</li>
+<li>ruby, d, java, c++</li>
+    <li>emacs, intellij idea, eclipse, xcode, visual studio</li>
     <li>plugins, android</li>
-    <li>git, svn, cvs</li>
+    <li>git, svn</li>
+    <li>gc, ref-counting, riia, new/delete</li>
+    <li>rake, make, cmake</li>
   </ul>
 </div>
-<a class="header">Career History</a>
+<a class="header">Career</a>
 <div class="chapter">
   <table class="cv">
 <tr class="separated">
 <td class="date">
-<span>2011-05</span><br>    <span>-to-date</span>
+<span>2012-04</span><br>    <span>-to-date</span>
+</td>
+      <td>
+        <a href="http://esrlabs.com">E.S.R. Labs GmbH, Munich, Germany</a>
+        <p>Software Developer</p>
+        <p>Design and implementation of software in the automotive sector.</p>
+        <p>Android.</p>
+      </td>
+    </tr>
+<tr class="separated">
+<td class="date">
+<span>2011-05</span><br>    <span>-2012-03</span>
 </td>
       <td>
         <a href="http://lear.com">LEAR Corporation, Munich, Germany</a>
@@ -181,7 +205,6 @@
 </table>
 </div>
 </div> </div>
-<div id="footer">last modified: 2012-05-06 | Tags <a href="../../sitemap/tags/#cv" rel="tag">cv</a>, <a href="../../sitemap/tags/#professional" rel="tag">professional</a>
-</div>
+<footer>last modified: 2012-05-06 | Tags <a href="../../sitemap/tags/#cv" rel="tag">cv</a>, <a href="../../sitemap/tags/#professional" rel="tag">professional</a></footer>
 </div></body>
 </html>

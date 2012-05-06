@@ -1,20 +1,59 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>"Last modified"</title>
-<link href="../../assets/styles/style.css" rel="stylesheet" type="text/css">
+<script src="../../assets/jquery-1.7.2.min.js" type="text/javascript"></script><script src="../../assets/jquery.tagcanvas-1.17.1.min.js" type="text/javascript"></script><link href="../../assets/styles/style.css" rel="stylesheet" type="text/css">
+<meta charset="UTF-8" content="text/html; charset=UTF-8" http-equiv="content-type">
+<script type="text/javascript">
+      $(document).ready(function() {
+      $('canvas.tagCloud').tagcanvas({
+      maxSpeed : 0.05,
+      depth : 0.075,
+      weightMode: 'both',
+      weight: true,
+      wheelZoom: true,
+      weightGradient: {0: '#ffffff', 0.33:'#e2e4cb', 0.8:'#b4cb8a', 1:'#3e3e3e'},
+      outlineColour: "#ffffff",
+      outlineMethod: "colour"
+      });
+      });
+    </script>
 </head>
 <body><div id="all">
-<div id="nav">
-<div class="parentfirst first"><a href="../../">Home</a></div>
+<nav><div class="parentfirst first"><a href="../../">Home</a></div>
 <div class="parentlast"><a href="../">Sitemap</a></div>
-    <div class="current last">Last modified</div>
-</div>
-<div id="main">
+    <div class="current last">Last modified</div></nav><div id="main">
 <h2 class="page">Sorted by modification time</h2>
 <div class="chapter"><ul>
 <li>
+    <a href="../cloud/">Cloud</a>
+    <span>(last modified: 2012-05-06, path: /sitemap/cloud/)</span>
+  </li>
+  <li>
+    <a href="../../assets/styles/style.css">Stylesheet</a>
+    <span>(last modified: 2012-05-06, path: /assets/styles/style/)</span>
+  </li>
+  <li>
+    <a href="../../about/cv/">Curriculum Vitae</a>
+    <span>(last modified: 2012-05-06, path: /about/cv/)</span>
+  </li>
+  <li>
+    <a href="../../projects/web/homepage/">My homepage</a>
+    <span>(last modified: 2012-05-06, path: /projects/web/homepage/)</span>
+  </li>
+  <li>
+    <a href="../../projects/web/">Web</a>
+    <span>(last modified: 2012-05-06, path: /projects/web/)</span>
+  </li>
+  <li>
+    <a href="../tree/">Hierarchical view</a>
+    <span>(last modified: 2012-05-06, path: /sitemap/tree/)</span>
+  </li>
+  <li>
+    <a href="../">Sitemap</a>
+    <span>(last modified: 2012-05-06, path: /sitemap/)</span>
+  </li>
+  <li>
     <a href="../../about/downloads/">Downloads</a>
     <span>(last modified: 2012-05-06, path: /about/downloads/)</span>
   </li>
@@ -33,10 +72,6 @@
   <li>
     <a href="../../projects/eclipse/adthelper/">ADT-Helper</a>
     <span>(last modified: 2012-05-06, path: /projects/eclipse/adthelper/)</span>
-  </li>
-  <li>
-    <a href="../../assets/styles/style.css">Stylesheet</a>
-    <span>(last modified: 2012-05-06, path: /assets/styles/style/)</span>
   </li>
   <li>
     <a href="../../projects/digitalmarsd/protobuf_for_d/">Protobuf</a>
@@ -79,24 +114,12 @@
     <span>(last modified: 2012-05-06, path: /projects/)</span>
   </li>
   <li>
-    <a href="../../about/cv/">Curriculum Vitae</a>
-    <span>(last modified: 2012-05-06, path: /about/cv/)</span>
-  </li>
-  <li>
-    <a href="../cloud/">Cloud</a>
-    <span>(last modified: 2012-05-06, path: /sitemap/cloud/)</span>
-  </li>
-  <li>
     <a href="./">Last modified</a>
     <span>(last modified: 2012-05-06, path: /sitemap/modtime/)</span>
   </li>
   <li>
     <a href="../alphabetical_index/">Index</a>
     <span>(last modified: 2012-05-06, path: /sitemap/alphabetical_index/)</span>
-  </li>
-  <li>
-    <a href="../tree/">Hierarchical view</a>
-    <span>(last modified: 2012-05-06, path: /sitemap/tree/)</span>
   </li>
   <li>
     <a href="../../projects/emacs/">Emacs</a>
@@ -126,12 +149,7 @@
     <a href="../../about/">About</a>
     <span>(last modified: 2012-05-06, path: /about/)</span>
   </li>
-  <li>
-    <a href="../">Sitemap</a>
-    <span>(last modified: 2012-05-06, path: /sitemap/)</span>
-  </li>
 </ul></div> </div>
-<div id="footer">last modified: 2012-05-06 | Tags <a href="../tags/#site" rel="tag">site</a>, <a href="../tags/#overview" rel="tag">overview</a>, <a href="../tags/#time" rel="tag">time</a>
-</div>
+<footer>last modified: 2012-05-06 | Tags <a href="../tags/#site" rel="tag">site</a>, <a href="../tags/#overview" rel="tag">overview</a>, <a href="../tags/#time" rel="tag">time</a></footer>
 </div></body>
 </html>

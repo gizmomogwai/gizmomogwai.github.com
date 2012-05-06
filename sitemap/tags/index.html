@@ -1,17 +1,28 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>"Tags"</title>
-<link href="../../assets/styles/style.css" rel="stylesheet" type="text/css">
+<script src="../../assets/jquery-1.7.2.min.js" type="text/javascript"></script><script src="../../assets/jquery.tagcanvas-1.17.1.min.js" type="text/javascript"></script><link href="../../assets/styles/style.css" rel="stylesheet" type="text/css">
+<meta charset="UTF-8" content="text/html; charset=UTF-8" http-equiv="content-type">
+<script type="text/javascript">
+      $(document).ready(function() {
+      $('canvas.tagCloud').tagcanvas({
+      maxSpeed : 0.05,
+      depth : 0.075,
+      weightMode: 'both',
+      weight: true,
+      wheelZoom: true,
+      weightGradient: {0: '#ffffff', 0.33:'#e2e4cb', 0.8:'#b4cb8a', 1:'#3e3e3e'},
+      outlineColour: "#ffffff",
+      outlineMethod: "colour"
+      });
+      });
+    </script>
 </head>
 <body><div id="all">
-<div id="nav">
-<div class="parentfirst first"><a href="../../">Home</a></div>
+<nav><div class="parentfirst first"><a href="../../">Home</a></div>
 <div class="parentlast"><a href="../">Sitemap</a></div>
-    <div class="current last">Tags</div>
-</div>
-<div id="main">
+    <div class="current last">Tags</div></nav><div id="main">
 <h2 class="page">Tags (<a href="#frequency">by frequency</a>, <a href="#alphabetically">alphabetically</a>)</h2>
 <div class="chapter">
 <a class="header" name="frequency">Sorted by frequency</a>
@@ -68,6 +79,13 @@
   <a href="../../projects/eclipse/birdseyeview/">Birds Eye View Plugin</a>
 </div>
 <div class="chapter">
+  <a name="jquery">jquery (4)</a>
+  <br><a href="../../projects/cocoa/hexqlplugin/">Hex QL Plugin</a>
+  <a href="../../projects/android/regexer/">Regexer</a>
+  <a href="../../projects/web/">Web</a>
+  <a href="../../projects/web/homepage/">My homepage</a>
+</div>
+<div class="chapter">
   <a name="eclipse">eclipse (4)</a>
   <br><a href="../../projects/eclipse/">Eclipse</a>
   <a href="../../projects/eclipse/adthelper/">ADT-Helper</a>
@@ -75,16 +93,17 @@
   <a href="../../projects/eclipse/birdseyeview/">Birds Eye View Plugin</a>
 </div>
 <div class="chapter">
+  <a name="html">html (4)</a>
+  <br><a href="../../projects/cocoa/hexqlplugin/">Hex QL Plugin</a>
+  <a href="../../projects/android/regexer/">Regexer</a>
+  <a href="../../projects/web/">Web</a>
+  <a href="../../projects/web/homepage/">My homepage</a>
+</div>
+<div class="chapter">
   <a name="cv">cv (3)</a>
   <br><a href="../../about/">About</a>
   <a href="../../about/downloads/">Downloads</a>
   <a href="../../about/cv/">Curriculum Vitae</a>
-</div>
-<div class="chapter">
-  <a name="d">d (3)</a>
-  <br><a href="../../projects/digitalmarsd/">Digitalmars D</a>
-  <a href="../../projects/digitalmarsd/protobuf_for_d/">Protobuf</a>
-  <a href="../../projects/digitalmarsd/combinatorparser/">Combinator Parser Lib</a>
 </div>
 <div class="chapter">
   <a name="osx">osx (3)</a>
@@ -99,24 +118,10 @@
   <a href="../../projects/cocoa/hexqlplugin/">Hex QL Plugin</a>
 </div>
 <div class="chapter">
-  <a name="tools">tools (2)</a>
-  <br><a href="../../projects/eclipse/adthelper/">ADT-Helper</a>
-  <a href="../../projects/eclipse/birdseyeview/">Birds Eye View Plugin</a>
-</div>
-<div class="chapter">
-  <a name="jquery">jquery (2)</a>
-  <br><a href="../../projects/cocoa/hexqlplugin/">Hex QL Plugin</a>
-  <a href="../../projects/android/regexer/">Regexer</a>
-</div>
-<div class="chapter">
-  <a name="professional">professional (2)</a>
-  <br><a href="../../about/downloads/">Downloads</a>
-  <a href="../../about/cv/">Curriculum Vitae</a>
-</div>
-<div class="chapter">
-  <a name="html">html (2)</a>
-  <br><a href="../../projects/cocoa/hexqlplugin/">Hex QL Plugin</a>
-  <a href="../../projects/android/regexer/">Regexer</a>
+  <a name="d">d (3)</a>
+  <br><a href="../../projects/digitalmarsd/">Digitalmars D</a>
+  <a href="../../projects/digitalmarsd/protobuf_for_d/">Protobuf</a>
+  <a href="../../projects/digitalmarsd/combinatorparser/">Combinator Parser Lib</a>
 </div>
 <div class="chapter">
   <a name="tags">tags (2)</a>
@@ -124,12 +129,23 @@
   <a href="../cloud/">Cloud</a>
 </div>
 <div class="chapter">
-  <a name="serialization">serialization (1)</a>
-  <br><a href="../../projects/digitalmarsd/protobuf_for_d/">Protobuf</a>
+  <a name="tools">tools (2)</a>
+  <br><a href="../../projects/eclipse/adthelper/">ADT-Helper</a>
+  <a href="../../projects/eclipse/birdseyeview/">Birds Eye View Plugin</a>
 </div>
 <div class="chapter">
-  <a name="ruby">ruby (1)</a>
-  <br><a href="../../projects/cocoa/zooomr/">Zooomr Picasa Plugin</a>
+  <a name="professional">professional (2)</a>
+  <br><a href="../../about/downloads/">Downloads</a>
+  <a href="../../about/cv/">Curriculum Vitae</a>
+</div>
+<div class="chapter">
+  <a name="nanoc">nanoc (2)</a>
+  <br><a href="../../projects/web/">Web</a>
+  <a href="../../projects/web/homepage/">My homepage</a>
+</div>
+<div class="chapter">
+  <a name="protobuf">protobuf (1)</a>
+  <br><a href="../../projects/digitalmarsd/protobuf_for_d/">Protobuf</a>
 </div>
 <div class="chapter">
   <a name="macruby">macruby (1)</a>
@@ -144,28 +160,28 @@
   <br><a href="../../projects/cocoa/hexqlplugin/">Hex QL Plugin</a>
 </div>
 <div class="chapter">
-  <a name="index">index (1)</a>
-  <br><a href="./">Tags</a>
+  <a name="zoomr">zoomr (1)</a>
+  <br><a href="../../projects/cocoa/zooomr/">Zooomr Picasa Plugin</a>
 </div>
 <div class="chapter">
   <a name="ui">ui (1)</a>
   <br><a href="../../projects/cocoa/">Cocoa</a>
 </div>
 <div class="chapter">
-  <a name="hierarchical">hierarchical (1)</a>
-  <br><a href="../tree/">Hierarchical view</a>
+  <a name="cloud">cloud (1)</a>
+  <br><a href="../cloud/">Cloud</a>
 </div>
 <div class="chapter">
-  <a name="alphabetical">alphabetical (1)</a>
-  <br><a href="../alphabetical_index/">Index</a>
+  <a name="time">time (1)</a>
+  <br><a href="../modtime/">Last modified</a>
 </div>
 <div class="chapter">
-  <a name="protobuf">protobuf (1)</a>
-  <br><a href="../../projects/digitalmarsd/protobuf_for_d/">Protobuf</a>
-</div>
-<div class="chapter">
-  <a name="zoomr">zoomr (1)</a>
+  <a name="ruby">ruby (1)</a>
   <br><a href="../../projects/cocoa/zooomr/">Zooomr Picasa Plugin</a>
+</div>
+<div class="chapter">
+  <a name="serialization">serialization (1)</a>
+  <br><a href="../../projects/digitalmarsd/protobuf_for_d/">Protobuf</a>
 </div>
 <div class="chapter">
   <a name="parser">parser (1)</a>
@@ -228,16 +244,32 @@
   <br><a href="../../projects/android/cacher/">Cacher</a>
 </div>
 <div class="chapter">
-  <a name="time">time (1)</a>
-  <br><a href="../modtime/">Last modified</a>
+  <a name="index">index (1)</a>
+  <br><a href="./">Tags</a>
+</div>
+<div class="chapter">
+  <a name="hierarchical">hierarchical (1)</a>
+  <br><a href="../tree/">Hierarchical view</a>
 </div>
 <div class="chapter">
   <a name="basic">basic (1)</a>
   <br><a href="../../projects/eclipse/selectionview/">SelectionView</a>
 </div>
 <div class="chapter">
-  <a name="cloud">cloud (1)</a>
-  <br><a href="../cloud/">Cloud</a>
+  <a name="git">git (1)</a>
+  <br><a href="../../projects/web/homepage/">My homepage</a>
+</div>
+<div class="chapter">
+  <a name="github">github (1)</a>
+  <br><a href="../../projects/web/homepage/">My homepage</a>
+</div>
+<div class="chapter">
+  <a name="rsync">rsync (1)</a>
+  <br><a href="../../projects/web/homepage/">My homepage</a>
+</div>
+<div class="chapter">
+  <a name="alphabetical">alphabetical (1)</a>
+  <br><a href="../alphabetical_index/">Index</a>
 </div>
 <div class="chapter">
   <a name="references">references (1)</a>
@@ -302,6 +334,10 @@
   <br><a href="../../projects/cocoa/zooomr/">Zooomr Picasa Plugin</a>
 </div>
 <div class="chapter">
+  <a name="rsync">rsync (1)</a>
+  <br><a href="../../projects/web/homepage/">My homepage</a>
+</div>
+<div class="chapter">
   <a name="regex">regex (1)</a>
   <br><a href="../../projects/android/regexer/">Regexer</a>
 </div>
@@ -363,13 +399,20 @@
   <br><a href="../../projects/android/switchoff/">Switch Off</a>
 </div>
 <div class="chapter">
+  <a name="nanoc">nanoc (2)</a>
+  <br><a href="../../projects/web/">Web</a>
+  <a href="../../projects/web/homepage/">My homepage</a>
+</div>
+<div class="chapter">
   <a name="macruby">macruby (1)</a>
   <br><a href="../../projects/cocoa/zooomr/">Zooomr Picasa Plugin</a>
 </div>
 <div class="chapter">
-  <a name="jquery">jquery (2)</a>
+  <a name="jquery">jquery (4)</a>
   <br><a href="../../projects/cocoa/hexqlplugin/">Hex QL Plugin</a>
   <a href="../../projects/android/regexer/">Regexer</a>
+  <a href="../../projects/web/">Web</a>
+  <a href="../../projects/web/homepage/">My homepage</a>
 </div>
 <div class="chapter">
   <a name="java">java (10)</a>
@@ -389,9 +432,11 @@
   <br><a href="./">Tags</a>
 </div>
 <div class="chapter">
-  <a name="html">html (2)</a>
+  <a name="html">html (4)</a>
   <br><a href="../../projects/cocoa/hexqlplugin/">Hex QL Plugin</a>
   <a href="../../projects/android/regexer/">Regexer</a>
+  <a href="../../projects/web/">Web</a>
+  <a href="../../projects/web/homepage/">My homepage</a>
 </div>
 <div class="chapter">
   <a name="hierarchical">hierarchical (1)</a>
@@ -400,6 +445,14 @@
 <div class="chapter">
   <a name="gps">gps (1)</a>
   <br><a href="../../projects/android/cacher/">Cacher</a>
+</div>
+<div class="chapter">
+  <a name="github">github (1)</a>
+  <br><a href="../../projects/web/homepage/">My homepage</a>
+</div>
+<div class="chapter">
+  <a name="git">git (1)</a>
+  <br><a href="../../projects/web/homepage/">My homepage</a>
 </div>
 <div class="chapter">
   <a name="geocaching">geocaching (1)</a>
@@ -473,7 +526,6 @@
   <br><a href="../alphabetical_index/">Index</a>
 </div>
 </div> </div>
-<div id="footer">last modified: 2012-05-06 | Tags <a href="#site" rel="tag">site</a>, <a href="#overview" rel="tag">overview</a>, <a href="#tags" rel="tag">tags</a>, <a href="#index" rel="tag">index</a>
-</div>
+<footer>last modified: 2012-05-06 | Tags <a href="#site" rel="tag">site</a>, <a href="#overview" rel="tag">overview</a>, <a href="#tags" rel="tag">tags</a>, <a href="#index" rel="tag">index</a></footer>
 </div></body>
 </html>
