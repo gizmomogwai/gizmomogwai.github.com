@@ -118,40 +118,50 @@ a.block {
 
 a.tag-1 {
   font-size: 1em;
-  font-weight: 100; }
+  font-weight: 100;
+  color: #607835; }
 
 a.tag-2 {
-  font-size: 1.1em;
-  font-weight: 200; }
+  font-size: 1.2em;
+  font-weight: 200;
+  color: #6c7a3f; }
 
 a.tag-3 {
-  font-size: 1.2em;
-  font-weight: 300; }
+  font-size: 1.4em;
+  font-weight: 300;
+  color: #787e49; }
 
 a.tag-4 {
-  font-size: 1.3em;
-  font-weight: 400; }
+  font-size: 1.6em;
+  font-weight: 400;
+  color: #848154; }
 
 a.tag-5 {
-  font-size: 1.5em;
-  font-weight: 500; }
+  font-size: 1.8em;
+  font-weight: 500;
+  color: #90845e; }
 
 a.tag-6 {
-  font-size: 1.7em;
-  font-weight: 600; }
+  font-size: 2em;
+  font-weight: 600;
+  color: #9c8769; }
 
 a.tag-7 {
-  font-size: 1.9em;
-  font-weight: 700; }
+  font-size: 2.2em;
+  font-weight: 700;
+  color: #a88a73; }
 
 a.tag-8 {
-  font-size: 2.1em;
-  font-weight: 800; }
+  font-size: 2.4em;
+  font-weight: 800;
+  color: #b48d7e; }
 
 a.tag-9 {
-  font-size: 2.3em;
-  font-weight: 900; }
+  font-size: 2.6em;
+  font-weight: 900;
+  color: #c09088; }
 
 a.tag-10 {
-  font-size: 2.7em;
-  font-weight: 1000; }
+  font-size: 2.8em;
+  font-weight: 900;
+  color: #cc9393; }
