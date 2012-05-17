@@ -121,9 +121,15 @@ a.tag-1 {
   font-weight: 100;
   color: #607835; }
 
+a.tagcolor-1 {
+  color: #607835; }
+
 a.tag-2 {
   font-size: 1.2em;
   font-weight: 200;
+  color: #6c7a3f; }
+
+a.tagcolor-2 {
   color: #6c7a3f; }
 
 a.tag-3 {
@@ -131,9 +137,15 @@ a.tag-3 {
   font-weight: 300;
   color: #787e49; }
 
+a.tagcolor-3 {
+  color: #787e49; }
+
 a.tag-4 {
   font-size: 1.6em;
   font-weight: 400;
+  color: #848154; }
+
+a.tagcolor-4 {
   color: #848154; }
 
 a.tag-5 {
@@ -141,9 +153,15 @@ a.tag-5 {
   font-weight: 500;
   color: #90845e; }
 
+a.tagcolor-5 {
+  color: #90845e; }
+
 a.tag-6 {
   font-size: 2em;
   font-weight: 600;
+  color: #9c8769; }
+
+a.tagcolor-6 {
   color: #9c8769; }
 
 a.tag-7 {
@@ -151,9 +169,15 @@ a.tag-7 {
   font-weight: 700;
   color: #a88a73; }
 
+a.tagcolor-7 {
+  color: #a88a73; }
+
 a.tag-8 {
   font-size: 2.4em;
   font-weight: 800;
+  color: #b48d7e; }
+
+a.tagcolor-8 {
   color: #b48d7e; }
 
 a.tag-9 {
@@ -161,7 +185,13 @@ a.tag-9 {
   font-weight: 900;
   color: #c09088; }
 
+a.tagcolor-9 {
+  color: #c09088; }
+
 a.tag-10 {
   font-size: 2.8em;
   font-weight: 900;
+  color: #cc9393; }
+
+a.tagcolor-10 {
   color: #cc9393; }
