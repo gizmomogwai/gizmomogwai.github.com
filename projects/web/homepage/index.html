@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>"My homepage"</title>
-<script src="../../../assets/jquery-1.7.2.min.js" type="text/javascript"></script><script src="../../../assets/jquery.tagcanvas-1.17.1.min.js" type="text/javascript"></script><link href="../../../assets/styles/style.css" rel="stylesheet" type="text/css">
-<script type="text/javascript">
+  <head>
+    <title>"My homepage"</title>
+    <script src="../../../assets/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="../../../assets/jquery.tagcanvas-1.17.1.min.js" type="text/javascript"></script>
+    <link href="../../../assets/styles/style.css" rel="stylesheet" type="text/css">
+    <meta charset="UTF-8" content="text/html; charset=UTF-8" http-equiv="content-type">
+    <script type="text/javascript">
       $(document).ready(function() {
       $('canvas.tagCloud').tagcanvas({
       maxSpeed : 0.05,
@@ -17,7 +19,8 @@
       outlineMethod: "colour"
       });
       });
-    </script><script type="text/javascript">
+    </script>
+    <script type="text/javascript">
       $(document).ready(function() {
       $('#disqus_thread').hide();
       });
@@ -26,9 +29,10 @@
       $('#disqus_thread').fadeToggle();
       });
       });
-    </script><script src="../../../assets/google-analytics-tracking.js" type="text/javascript"></script>
-</head>
-<body><div id="all">
+    </script>
+    <script src="../../../assets/google-analytics-tracking.js" type="text/javascript"></script>
+  </head>
+  <body><div id="all">
 <nav><div class="parentfirst first"><a href="../../../">Home</a></div>
 <div class="parent"><a href="../../">Projects</a></div>
 <div class="parentlast"><a href="../">Web</a></div>
@@ -47,7 +51,7 @@
     I wanted to use my favourite technologies, so this is the list of stuff used here:
     </p>
 <ul>
-<li>
+      <li>
 <a href="http://nanoc.stoneship.org/">nanoc3</a> - for static site generation.</li>
       <li>
 <a href="http://haml-lang.com">haml</a> - as html-template engine.</li>
@@ -58,6 +62,7 @@
       <li>
 <a href="http://pages.github.com">github:pages</a> - as host.</li>
     </ul>
+  
 </div>
 <a class="header">Sources</a>
 <div class="chapter">
@@ -77,7 +82,8 @@
     s.src = 'http://gizmomogwai.disqus.com/count.js';
     (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
   }());
-</script><script type="text/javascript">
+</script>
+      <script type="text/javascript">
   var disqus_identifier = 'My homepage';
   var disqus_shortname = 'gizmomogwai';
   (function() {
@@ -86,6 +92,6 @@
      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
-</div>
+    </div>
 </div></body>
 </html>

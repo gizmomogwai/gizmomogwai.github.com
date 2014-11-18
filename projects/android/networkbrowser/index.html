@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>"Network Browser"</title>
-<script src="../../../assets/jquery-1.7.2.min.js" type="text/javascript"></script><script src="../../../assets/jquery.tagcanvas-1.17.1.min.js" type="text/javascript"></script><link href="../../../assets/styles/style.css" rel="stylesheet" type="text/css">
-<script type="text/javascript">
+  <head>
+    <title>"Network Browser"</title>
+    <script src="../../../assets/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="../../../assets/jquery.tagcanvas-1.17.1.min.js" type="text/javascript"></script>
+    <link href="../../../assets/styles/style.css" rel="stylesheet" type="text/css">
+    <meta charset="UTF-8" content="text/html; charset=UTF-8" http-equiv="content-type">
+    <script type="text/javascript">
       $(document).ready(function() {
       $('canvas.tagCloud').tagcanvas({
       maxSpeed : 0.05,
@@ -17,7 +19,8 @@
       outlineMethod: "colour"
       });
       });
-    </script><script type="text/javascript">
+    </script>
+    <script type="text/javascript">
       $(document).ready(function() {
       $('#disqus_thread').hide();
       });
@@ -26,9 +29,10 @@
       $('#disqus_thread').fadeToggle();
       });
       });
-    </script><script src="../../../assets/google-analytics-tracking.js" type="text/javascript"></script>
-</head>
-<body><div id="all">
+    </script>
+    <script src="../../../assets/google-analytics-tracking.js" type="text/javascript"></script>
+  </head>
+  <body><div id="all">
 <nav><div class="parentfirst first"><a href="../../../">Home</a></div>
 <div class="parent"><a href="../../">Projects</a></div>
 <div class="parentlast"><a href="../">Android</a></div>
@@ -41,7 +45,7 @@
     When working with OS X bonjour is everywhere. My machine alone has:
     </p>
 <ul>
-<li>Apple File Sharing (afp, smb or ftp)</li>
+      <li>Apple File Sharing (afp, smb or ftp)</li>
       <li>Screen Sharing (vnc)</li>
       <li>World Wide Web (http or https)</li>
       <li>clipshlpr (funny clipboard sharing from a program i recently purchased)</li>
@@ -69,17 +73,18 @@
     The networkbrowser simply browses through discoverable services and then tries to call seperately installable intents. I also provide some wrapper intents for:
     </p>
 <ul>
-<li>ssh - mapped to connectbot</li>
+      <li>ssh - mapped to connectbot</li>
       <li>ftp - mapped to fsync</li>
       <li>rfb - (remote framebuffer or vnc) mapped to androidvnc (i hope my patch to androidvnc makes it into the next release)</li>
       <li>http - mapped to the default browse intent</li>
     </ul>
+  
 </div>
 <a class="header">How to extend</a>
 <div class="chapter">
   As an application developer you have to ways of communicating with the network browser:
   <ul>
-<li>
+    <li>
       Provide an intent that is called from the network browser when the user selects an service.
     </li>
     <li>
@@ -102,7 +107,8 @@
     s.src = 'http://gizmomogwai.disqus.com/count.js';
     (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
   }());
-</script><script type="text/javascript">
+</script>
+      <script type="text/javascript">
   var disqus_identifier = 'Network Browser';
   var disqus_shortname = 'gizmomogwai';
   (function() {
@@ -111,6 +117,6 @@
      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
-</div>
+    </div>
 </div></body>
 </html>

@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>"Protobuf"</title>
-<script src="../../../assets/jquery-1.7.2.min.js" type="text/javascript"></script><script src="../../../assets/jquery.tagcanvas-1.17.1.min.js" type="text/javascript"></script><link href="../../../assets/styles/style.css" rel="stylesheet" type="text/css">
-<script type="text/javascript">
+  <head>
+    <title>"Protobuf"</title>
+    <script src="../../../assets/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="../../../assets/jquery.tagcanvas-1.17.1.min.js" type="text/javascript"></script>
+    <link href="../../../assets/styles/style.css" rel="stylesheet" type="text/css">
+    <meta charset="UTF-8" content="text/html; charset=UTF-8" http-equiv="content-type">
+    <script type="text/javascript">
       $(document).ready(function() {
       $('canvas.tagCloud').tagcanvas({
       maxSpeed : 0.05,
@@ -17,7 +19,8 @@
       outlineMethod: "colour"
       });
       });
-    </script><script type="text/javascript">
+    </script>
+    <script type="text/javascript">
       $(document).ready(function() {
       $('#disqus_thread').hide();
       });
@@ -26,9 +29,10 @@
       $('#disqus_thread').fadeToggle();
       });
       });
-    </script><script src="../../../assets/google-analytics-tracking.js" type="text/javascript"></script>
-</head>
-<body><div id="all">
+    </script>
+    <script src="../../../assets/google-analytics-tracking.js" type="text/javascript"></script>
+  </head>
+  <body><div id="all">
 <nav><div class="parentfirst first"><a href="../../../">Home</a></div>
 <div class="parent"><a href="../../">Projects</a></div>
 <div class="parentlast"><a href="../">Digitalmars D</a></div>
@@ -41,7 +45,7 @@
     I did not find a protobuf implementation for d so I thought:
     </p>
 <ul>
-<li>Learn a little about the protobuf internals.</li>
+      <li>Learn a little about the protobuf internals.</li>
       <li>See how to generate source with d.</li>
       <li>Use my parser combinator library to implement a not so minimal parser example.</li>
       <li>And create a useful library to interact with the rest of the world.</li>
@@ -55,12 +59,13 @@
     The project consists of several parts:
     </p>
 <ul>
-<li>some small helper classes that are kind of a runtime for the generated sources.</li>
+      <li>some small helper classes that are kind of a runtime for the generated sources.</li>
       <li>some tests written in java to generate protobuf files which are used to check the results from the generator.</li>
       <li>the compiler itself (it is implemented by first writing a parser from scratch (I know ... dont do this at home and use the protobuf parser)).</li>
       <li>integration tests, that use the java-references to check if everything is compatible.</li>
     </ul>
-<p>
+  
+  <p>
     Please check the d examples in compiler/tests (e.g. the canonical addressbook tests for the generated api).
   </p>
 </div>
@@ -84,7 +89,8 @@
     s.src = 'http://gizmomogwai.disqus.com/count.js';
     (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
   }());
-</script><script type="text/javascript">
+</script>
+      <script type="text/javascript">
   var disqus_identifier = 'Protobuf';
   var disqus_shortname = 'gizmomogwai';
   (function() {
@@ -93,6 +99,6 @@
      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
-</div>
+    </div>
 </div></body>
 </html>

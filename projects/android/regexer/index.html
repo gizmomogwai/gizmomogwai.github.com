@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>"Regexer"</title>
-<script src="../../../assets/jquery-1.7.2.min.js" type="text/javascript"></script><script src="../../../assets/jquery.tagcanvas-1.17.1.min.js" type="text/javascript"></script><link href="../../../assets/styles/style.css" rel="stylesheet" type="text/css">
-<script type="text/javascript">
+  <head>
+    <title>"Regexer"</title>
+    <script src="../../../assets/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="../../../assets/jquery.tagcanvas-1.17.1.min.js" type="text/javascript"></script>
+    <link href="../../../assets/styles/style.css" rel="stylesheet" type="text/css">
+    <meta charset="UTF-8" content="text/html; charset=UTF-8" http-equiv="content-type">
+    <script type="text/javascript">
       $(document).ready(function() {
       $('canvas.tagCloud').tagcanvas({
       maxSpeed : 0.05,
@@ -17,7 +19,8 @@
       outlineMethod: "colour"
       });
       });
-    </script><script type="text/javascript">
+    </script>
+    <script type="text/javascript">
       $(document).ready(function() {
       $('#disqus_thread').hide();
       });
@@ -26,9 +29,10 @@
       $('#disqus_thread').fadeToggle();
       });
       });
-    </script><script src="../../../assets/google-analytics-tracking.js" type="text/javascript"></script>
-</head>
-<body><div id="all">
+    </script>
+    <script src="../../../assets/google-analytics-tracking.js" type="text/javascript"></script>
+  </head>
+  <body><div id="all">
 <nav><div class="parentfirst first"><a href="../../../">Home</a></div>
 <div class="parent"><a href="../../">Projects</a></div>
 <div class="parentlast"><a href="../">Android</a></div>
@@ -59,7 +63,7 @@
     For me the funny thing about the regexer is, that its implemented in a hybrid way:
     </p>
 <ul>
-<li>
+      <li>
         One half of the application is implemented in java (it simple takes the input, compiles a <a href="pattern.java.com">pattern</a> and tries to matches it againts another input). Then it outputs a little bit of html and puts it into a webview.
       </li>
       <li>
@@ -68,11 +72,12 @@
     </ul>
     I find this style of development really stimulating, because you have to know more than one technology, can use the best tool for the job and switch between different development paradigms:
     <ul>
-<li>Layouting of a simple userinterface with the android-xml-layouts.</li>
+      <li>Layouting of a simple userinterface with the android-xml-layouts.</li>
       <li>Some kind of template approach to create the desired html out of the result of the pattern match.</li>
       <li>Styling with css and html to get a good looking result.</li>
       <li>Coding with javascript to get the needed dynamic into the html.</li>
     </ul>
+  
 </div>
 <a class="header">Sources</a>
 <div class="chapter">
@@ -91,7 +96,8 @@
     s.src = 'http://gizmomogwai.disqus.com/count.js';
     (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
   }());
-</script><script type="text/javascript">
+</script>
+      <script type="text/javascript">
   var disqus_identifier = 'Regexer';
   var disqus_shortname = 'gizmomogwai';
   (function() {
@@ -100,6 +106,6 @@
      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
-</div>
+    </div>
 </div></body>
 </html>
