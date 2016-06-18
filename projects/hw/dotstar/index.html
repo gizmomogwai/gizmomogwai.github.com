@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>"Ergodox"</title>
+    <title>"DotStart"</title>
     <script src="../../../assets/jquery-1.7.2.min.js" type="text/javascript"></script>
     <script src="../../../assets/jquery.tagcanvas-1.17.1.min.js" type="text/javascript"></script>
     <link href="../../../assets/styles/style.css" rel="stylesheet" type="text/css">
@@ -36,35 +36,41 @@
 <nav><div class="parentfirst first"><a href="../../../">Home</a></div>
 <div class="parent"><a href="../../">Projects</a></div>
 <div class="parentlast"><a href="../">HW</a></div>
-    <div class="current last">Ergodox</div></nav><div id="main">
-<h2 class="page">Ergodox</h2>
+    <div class="current last">DotStart</div></nav><div id="main">
+<h2 class="page">DotStart</h2>
 <div class="chapter">
+<a class="header">Background</a>
+<div class="chapter">
+  <p>
+    I always wanted to have a flexible build indicator in hardware, that shows if something is wrong. Best would be a traffic light thing, but when you watch over many builds, its better to have a little more flexibility. One colleague of mine showed me the phantastic <a href="https://www.adafruit.com/">Adafruit</a> website. After some looking around I decided that the most flexible stup for me would be a <a href="https://www.raspberrypi.org">Raspberry</a> together with a so called <a href="https://learn.adafruit.com/dotstar-pi-painter">DotStar</a> led strip.
+  </p>
+</div>
 <a class="header">HW</a>
 <div class="chapter">
   <p>
-    When starting to feel some signs of RSI and after breaking my right hand I started looking into ergonomic keyboards. Now I use a <a href="http://www.kinesis-ergo.com/shop/advantage-pro-for-pc-mac/">Kinesis Advantage</a>at work and a <a href="https://www.massdrop.com/buy/infinity-ergodox?mode=guest_open">massdropped</a> an <a href="http://ergodox.org/">ergodox</a> keyboard kit for use at home. The assembly of the ergodox was <a href="https://twitter.com/sebabenz/status/499243285173792768">fun</a>, although I never used a soldering iron to that scale before.
+    Fortunately the tutorial at the adafruit website was very nice so even I managed to assemble the HW together first try. It till looks a little rough, but for now it works.
   </p>
 </div>
 <a class="header">SW</a>
 <div class="chapter">
   <p>
-    Additionally to this I decided to switch from qwertz to <a href="http://www.neo-layout.org">neo-2</a>. This was one of the most painful experiences of my life. Going from 80wpm to 0 is really ugly. After a while it got better, but still I am not at my old speed. Good thing is, that I can switch between neo on an ergonomic keyboard and qwertz on a regular keyboard.
+    Unfortunately Adfruits DotStar library is only available as python module. This means that the code to control the led-strip via <a href="https://en.wikipedia.org/wiki/Serial_Peripheral_Interface_Bus">SPI</a> cannot easily be reused for my favorite scripting <a href="https://www.ruby-lang.org">language</a>. Luckily the control of the led strip is straightforward <a href="https://github.com/gizmomogwai/dotstarlib">cpp</a> binding that was also easily to bring into the ruby world with the help of <a href="http://jasonroelofs.github.io/rice/">rice</a>.
   </p>
   <p>
-    At first I thought it would be great to have the programmability of the kinesis and the ergodox in place to support the neo layout. After some experimenting I arrived now at a solution, where the ergodox <a href="https://github.com/gizmomogwai/tmk_keyboard">mimics</a> the kinesis as far as possible, the rest is done by keyboard layouts in linux + some xkbcomp tricks.
+    On top of this a simple ruby program poll my build-servers and shows some different lights and animations.
   </p>
 </div>
 <a class="header">Todo</a>
 <div class="chapter">
   <p>
-    I tried to build an ergodox stand from styrodur, but I would really love to get something <a href="https://github.com/bchociej/ergodox-stand">3d</a><a></a> printed!
+    Make hardware setup nicer.
   </p>
   <p>
-    Better <a href="http://keycapsdirect.com/key-caps.php">keycaps</a> needed.
+    Make use of <a href="https://github.com/ReactiveX/RxRuby">rx-ruby</a>. My first try with this leaked like hell, so I did it everything from scratch. Still would be nice to have a working rx implementation in ruby.
   </p>
 </div>
 </div> </div>
-<footer>last modified: 2016-06-18 | <a id="toggle_disqus_thread" data-disqus-identifier="Ergodox">Comments</a> | Tags <a href="../../../sitemap/tags/#ergodox" rel="tag">ergodox</a>, <a href="../../../sitemap/tags/#keyboard" rel="tag">keyboard</a>, <a href="../../../sitemap/tags/#hw" rel="tag">hw</a></footer><div id="disqus_thread">
+<footer>last modified: 2016-06-18 | <a id="toggle_disqus_thread" data-disqus-identifier="DotStart">Comments</a> | Tags <a href="../../../sitemap/tags/#dotstar" rel="tag">dotstar</a>, <a href="../../../sitemap/tags/#raspberry" rel="tag">raspberry</a>, <a href="../../../sitemap/tags/#hw" rel="tag">hw</a></footer><div id="disqus_thread">
       <script type="text/javascript">
   var disqus_shortname = 'gizmomogwai';
   (function () {
@@ -75,7 +81,7 @@
   }());
 </script>
       <script type="text/javascript">
-  var disqus_identifier = 'Ergodox';
+  var disqus_identifier = 'DotStart';
   var disqus_shortname = 'gizmomogwai';
   (function() {
      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
