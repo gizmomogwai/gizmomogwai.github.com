@@ -21,6 +21,17 @@ outlineMethod: "colour"
 });
 });
 </script>
+<script type="text/javascript">
+$(document).ready(function() {
+$('#disqus_thread').hide();
+});
+$(document).ready(function() {
+$('#toggle_disqus_thread').click(function() {
+$('#disqus_thread').fadeToggle();
+});
+});
+</script>
+<script src="../../assets/google-analytics-tracking.js" type="text/javascript"></script>
 </head>
 <body>
 <script src="../../assets/prism.js" type="text/javascript"></script><div id="all">
@@ -35,7 +46,24 @@ outlineMethod: "colour"
 C++0x looks to scary ... so choose your weapon. I tried digitalmars d (now termed dlang), because it is a rich language with lots of "cool" features.
 </p>
 </div> </div>
-<footer></footer>
+<footer>last modified: 2017-06-29 | <a id="toggle_disqus_thread" data-disqus-identifier="dlang">Comments</a> | Tags <a href="../../sitemap/tags/#dlang" rel="tag">dlang</a></footer><div id="disqus_thread">
+<script type="text/javascript">var disqus_shortname = 'gizmomogwai';
+(function () {
+  var s = document.createElement('script'); s.async = true;
+  s.type = 'text/javascript';
+  s.src = 'http://gizmomogwai.disqus.com/count.js';
+  (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+<script type="text/javascript">var disqus_identifier = 'dlang';
+var disqus_shortname = 'gizmomogwai';
+(function() {
+   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+   dsq.src = '//gizmomogwai.disqus.com/embed.js';
+   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+</div>
 </div>
 </body>
 </html>
