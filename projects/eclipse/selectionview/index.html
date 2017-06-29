@@ -1,81 +1,54 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>"SelectionView"</title>
-    <script src="../../../assets/jquery-1.7.2.min.js" type="text/javascript"></script>
-    <script src="../../../assets/jquery.tagcanvas-1.17.1.min.js" type="text/javascript"></script>
-    <link href="../../../assets/styles/style.css" rel="stylesheet" type="text/css">
-    <meta charset="UTF-8" content="text/html; charset=UTF-8" http-equiv="content-type">
-    <script type="text/javascript">
-      $(document).ready(function() {
-      $('canvas.tagCloud').tagcanvas({
-      maxSpeed : 0.05,
-      depth : 0.075,
-      weightMode: 'both',
-      weight: true,
-      wheelZoom: true,
-      weightGradient: {0:'#cc9393', 1:'#607835'}, // 0.33:'#e2e4cb', 0.66:'#b4cb8a',
-      outlineColour: "#ffffff",
-      outlineMethod: "colour"
-      });
-      });
-    </script>
-    <script type="text/javascript">
-      $(document).ready(function() {
-      $('#disqus_thread').hide();
-      });
-      $(document).ready(function() {
-      $('#toggle_disqus_thread').click(function() {
-      $('#disqus_thread').fadeToggle();
-      });
-      });
-    </script>
-    <script src="../../../assets/google-analytics-tracking.js" type="text/javascript"></script>
-  </head>
-  <body><div id="all">
+<head>
+<title>"SelectionView"</title>
+<script src="../../../assets/jquery-1.7.2.min.js" type="text/javascript"></script>
+<script src="../../../assets/jquery.tagcanvas-1.17.1.min.js" type="text/javascript"></script>
+<link href="../../../assets/styles/style.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/styles/prism.css" rel="stylesheet" type="text/css">
+<meta charset="UTF-8" content="text/html; charset=UTF-8" http-equiv="content-type">
+<script type="text/javascript">
+$(document).ready(function() {
+$('canvas.tagCloud').tagcanvas({
+maxSpeed : 0.05,
+depth : 0.075,
+weightMode: 'both',
+weight: true,
+wheelZoom: true,
+weightGradient: {0:'#cc9393', 1:'#607835'}, // 0.33:'#e2e4cb', 0.66:'#b4cb8a',
+outlineColour: "#ffffff",
+outlineMethod: "colour"
+});
+});
+</script>
+</head>
+<body>
+<script src="../../../assets/prism.js" type="text/javascript"></script><div id="all">
 <nav><div class="parentfirst first"><a href="../../../">Home</a></div>
 <div class="parent"><a href="../../">Projects</a></div>
 <div class="parentlast"><a href="../">Eclipse</a></div>
-    <div class="current last">SelectionView</div></nav><div id="main">
+<div class="current last">SelectionView</div></nav><div id="main">
 <h2 class="page">SelectionView</h2>
 <div class="chapter">
 <p>
-  One of those concepts is the workbench-selection in eclipse. It enables such cool features like the java browsing perspective, is used for adding to contextmenus in a plugable fashion and can be used from built as well as home-made plugins.
-  </p>
+One of those concepts is the workbench-selection in eclipse. It enables such cool features like the java browsing perspective, is used for adding to contextmenus in a plugable fashion and can be used from built as well as home-made plugins.
+</p>
 <p>
-    to understand this thing better and show the newbie developer whats in this selection this plugin can be used!
-  </p>
+to understand this thing better and show the newbie developer whats in this selection this plugin can be used!
+</p>
 
 <a class="header">Story</a>
 <div class="chapter">
-  <p>
-    it can be observed really often in software development, that a very simple concept leads to beautiful and at the same time useful code and programs.
-  </p>
+<p>
+it can be observed really often in software development, that a very simple concept leads to beautiful and at the same time useful code and programs.
+</p>
 </div>
 <a class="header">Sources</a>
 <div class="chapter">
-  The sources are located in my private svn repository, which i access with git.
+The sources are located in my private svn repository, which i access with git.
 </div>
 </div> </div>
-<footer>last modified: 2012-05-06 | <a id="toggle_disqus_thread" data-disqus-identifier="SelectionView">Comments</a> | Tags <a href="../../../sitemap/tags/#eclipse" rel="tag">eclipse</a>, <a href="../../../sitemap/tags/#java" rel="tag">java</a>, <a href="../../../sitemap/tags/#plugins" rel="tag">plugins</a>, <a href="../../../sitemap/tags/#basic" rel="tag">basic</a></footer><div id="disqus_thread">
-      <script type="text/javascript">
-  var disqus_shortname = 'gizmomogwai';
-  (function () {
-    var s = document.createElement('script'); s.async = true;
-    s.type = 'text/javascript';
-    s.src = 'http://gizmomogwai.disqus.com/count.js';
-    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-  }());
-</script>
-      <script type="text/javascript">
-  var disqus_identifier = 'SelectionView';
-  var disqus_shortname = 'gizmomogwai';
-  (function() {
-     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-     dsq.src = '//gizmomogwai.disqus.com/embed.js';
-     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
-</script>
-    </div>
-</div></body>
+<footer></footer>
+</div>
+</body>
 </html>

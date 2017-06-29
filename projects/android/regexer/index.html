@@ -1,111 +1,84 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>"Regexer"</title>
-    <script src="../../../assets/jquery-1.7.2.min.js" type="text/javascript"></script>
-    <script src="../../../assets/jquery.tagcanvas-1.17.1.min.js" type="text/javascript"></script>
-    <link href="../../../assets/styles/style.css" rel="stylesheet" type="text/css">
-    <meta charset="UTF-8" content="text/html; charset=UTF-8" http-equiv="content-type">
-    <script type="text/javascript">
-      $(document).ready(function() {
-      $('canvas.tagCloud').tagcanvas({
-      maxSpeed : 0.05,
-      depth : 0.075,
-      weightMode: 'both',
-      weight: true,
-      wheelZoom: true,
-      weightGradient: {0:'#cc9393', 1:'#607835'}, // 0.33:'#e2e4cb', 0.66:'#b4cb8a',
-      outlineColour: "#ffffff",
-      outlineMethod: "colour"
-      });
-      });
-    </script>
-    <script type="text/javascript">
-      $(document).ready(function() {
-      $('#disqus_thread').hide();
-      });
-      $(document).ready(function() {
-      $('#toggle_disqus_thread').click(function() {
-      $('#disqus_thread').fadeToggle();
-      });
-      });
-    </script>
-    <script src="../../../assets/google-analytics-tracking.js" type="text/javascript"></script>
-  </head>
-  <body><div id="all">
+<head>
+<title>"Regexer"</title>
+<script src="../../../assets/jquery-1.7.2.min.js" type="text/javascript"></script>
+<script src="../../../assets/jquery.tagcanvas-1.17.1.min.js" type="text/javascript"></script>
+<link href="../../../assets/styles/style.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/styles/prism.css" rel="stylesheet" type="text/css">
+<meta charset="UTF-8" content="text/html; charset=UTF-8" http-equiv="content-type">
+<script type="text/javascript">
+$(document).ready(function() {
+$('canvas.tagCloud').tagcanvas({
+maxSpeed : 0.05,
+depth : 0.075,
+weightMode: 'both',
+weight: true,
+wheelZoom: true,
+weightGradient: {0:'#cc9393', 1:'#607835'}, // 0.33:'#e2e4cb', 0.66:'#b4cb8a',
+outlineColour: "#ffffff",
+outlineMethod: "colour"
+});
+});
+</script>
+</head>
+<body>
+<script src="../../../assets/prism.js" type="text/javascript"></script><div id="all">
 <nav><div class="parentfirst first"><a href="../../../">Home</a></div>
 <div class="parent"><a href="../../">Projects</a></div>
 <div class="parentlast"><a href="../">Android</a></div>
-    <div class="current last">Regexer</div></nav><div id="main">
+<div class="current last">Regexer</div></nav><div id="main">
 <h2 class="page">Regexer</h2>
 <div class="chapter">
 <a class="header">Story</a>
 <div class="chapter">
-  <p>
-    My most succesful private software project ever (the regex plugin for intellij with something like 30000 downloads) was abandoned since i did not use intellij any longer. Now starts the old intellij vs. eclipse battle. But points of the story is: I am quite fascinated by regular expressions for simple parse tasks (if you want to parse something complex i would use another technologie), but for simple pattern matching tasks (where the regular expressions are also quite simple) its perfect. No ugly indexOf, substring and off by one problems :)
-  </p>
-  <p>
-    With this mindset it could be useful if you had always a small regular expression evaluator with you to experiment and analyse your patterns.
-  </p>
-  <p>
-    There are some regular expression applications on the market, but none of them satisfied me.
-  </p>
-  <p>
-    So the regexer was born.
-  </p>
+<p>
+My most succesful private software project ever (the regex plugin for intellij with something like 30000 downloads) was abandoned since i did not use intellij any longer. Now starts the old intellij vs. eclipse battle. But points of the story is: I am quite fascinated by regular expressions for simple parse tasks (if you want to parse something complex i would use another technologie), but for simple pattern matching tasks (where the regular expressions are also quite simple) its perfect. No ugly indexOf, substring and off by one problems :)
+</p>
+<p>
+With this mindset it could be useful if you had always a small regular expression evaluator with you to experiment and analyse your patterns.
+</p>
+<p>
+There are some regular expression applications on the market, but none of them satisfied me.
+</p>
+<p>
+So the regexer was born.
+</p>
 </div>
 <a class="header">Implementation</a>
 <div class="chapter">
-  <p>
-    First take a look at the screenshots ...
-  </p>
-  <p>
-    For me the funny thing about the regexer is, that its implemented in a hybrid way:
-    </p>
+<p>
+First take a look at the screenshots ...
+</p>
+<p>
+For me the funny thing about the regexer is, that its implemented in a hybrid way:
+</p>
 <ul>
-      <li>
-        One half of the application is implemented in java (it simple takes the input, compiles a <a href="http://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html">Pattern</a> and tries to matches it againts another input). Then it outputs a little bit of html and puts it into a webview.
-      </li>
-      <li>
-        The other half lifes in the html and is implemented in javascript by using the excellent <a href="http://www.jquery.com">jquery</a> library.
-      </li>
-    </ul>
-    I find this style of development really stimulating, because you have to know more than one technology, can use the best tool for the job and switch between different development paradigms:
-    <ul>
-      <li>Layouting of a simple userinterface with the android-xml-layouts.</li>
-      <li>Some kind of template approach to create the desired html out of the result of the pattern match.</li>
-      <li>Styling with css and html to get a good looking result.</li>
-      <li>Coding with javascript to get the needed dynamic into the html.</li>
-    </ul>
-  
+<li>
+One half of the application is implemented in java (it simple takes the input, compiles a <a href="http://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html">Pattern</a> and tries to matches it againts another input). Then it outputs a little bit of html and puts it into a webview.
+</li>
+<li>
+The other half lifes in the html and is implemented in javascript by using the excellent <a href="http://www.jquery.com">jquery</a> library.
+</li>
+</ul>
+I find this style of development really stimulating, because you have to know more than one technology, can use the best tool for the job and switch between different development paradigms:
+<ul>
+<li>Layouting of a simple userinterface with the android-xml-layouts.</li>
+<li>Some kind of template approach to create the desired html out of the result of the pattern match.</li>
+<li>Styling with css and html to get a good looking result.</li>
+<li>Coding with javascript to get the needed dynamic into the html.</li>
+</ul>
+
 </div>
 <a class="header">Sources</a>
 <div class="chapter">
-  The sources are located in my private svn repository, which i access with git.
+The sources are located in my private svn repository, which i access with git.
 </div>
 <a class="header">Screens</a><div class="chapter">
 <img src="screenshot1.png" width="200px"><img src="screenshot2.png" width="200px"><img src="screenshot3.png" width="200px">
 </div>
 </div> </div>
-<footer>last modified: 2015-04-12 | <a id="toggle_disqus_thread" data-disqus-identifier="Regexer">Comments</a> | Tags <a href="../../../sitemap/tags/#android" rel="tag">android</a>, <a href="../../../sitemap/tags/#tool" rel="tag">tool</a>, <a href="../../../sitemap/tags/#regex" rel="tag">regex</a>, <a href="../../../sitemap/tags/#java" rel="tag">java</a>, <a href="../../../sitemap/tags/#html" rel="tag">html</a>, <a href="../../../sitemap/tags/#jquery" rel="tag">jquery</a></footer><div id="disqus_thread">
-      <script type="text/javascript">
-  var disqus_shortname = 'gizmomogwai';
-  (function () {
-    var s = document.createElement('script'); s.async = true;
-    s.type = 'text/javascript';
-    s.src = 'http://gizmomogwai.disqus.com/count.js';
-    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-  }());
-</script>
-      <script type="text/javascript">
-  var disqus_identifier = 'Regexer';
-  var disqus_shortname = 'gizmomogwai';
-  (function() {
-     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-     dsq.src = '//gizmomogwai.disqus.com/embed.js';
-     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
-</script>
-    </div>
-</div></body>
+<footer></footer>
+</div>
+</body>
 </html>

@@ -1,109 +1,83 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>"Emacs"</title>
-    <script src="../../assets/jquery-1.7.2.min.js" type="text/javascript"></script>
-    <script src="../../assets/jquery.tagcanvas-1.17.1.min.js" type="text/javascript"></script>
-    <link href="../../assets/styles/style.css" rel="stylesheet" type="text/css">
-    <meta charset="UTF-8" content="text/html; charset=UTF-8" http-equiv="content-type">
-    <script type="text/javascript">
-      $(document).ready(function() {
-      $('canvas.tagCloud').tagcanvas({
-      maxSpeed : 0.05,
-      depth : 0.075,
-      weightMode: 'both',
-      weight: true,
-      wheelZoom: true,
-      weightGradient: {0:'#cc9393', 1:'#607835'}, // 0.33:'#e2e4cb', 0.66:'#b4cb8a',
-      outlineColour: "#ffffff",
-      outlineMethod: "colour"
-      });
-      });
-    </script>
-    <script type="text/javascript">
-      $(document).ready(function() {
-      $('#disqus_thread').hide();
-      });
-      $(document).ready(function() {
-      $('#toggle_disqus_thread').click(function() {
-      $('#disqus_thread').fadeToggle();
-      });
-      });
-    </script>
-    <script src="../../assets/google-analytics-tracking.js" type="text/javascript"></script>
-  </head>
-  <body><div id="all">
+<head>
+<title>"Emacs"</title>
+<script src="../../assets/jquery-1.7.2.min.js" type="text/javascript"></script>
+<script src="../../assets/jquery.tagcanvas-1.17.1.min.js" type="text/javascript"></script>
+<link href="../../assets/styles/style.css" rel="stylesheet" type="text/css">
+<link href="../../assets/styles/prism.css" rel="stylesheet" type="text/css">
+<meta charset="UTF-8" content="text/html; charset=UTF-8" http-equiv="content-type">
+<script type="text/javascript">
+$(document).ready(function() {
+$('canvas.tagCloud').tagcanvas({
+maxSpeed : 0.05,
+depth : 0.075,
+weightMode: 'both',
+weight: true,
+wheelZoom: true,
+weightGradient: {0:'#cc9393', 1:'#607835'}, // 0.33:'#e2e4cb', 0.66:'#b4cb8a',
+outlineColour: "#ffffff",
+outlineMethod: "colour"
+});
+});
+</script>
+</head>
+<body>
+<script src="../../assets/prism.js" type="text/javascript"></script><div id="all">
 <nav><div class="parentfirst first"><a href="../../">Home</a></div>
 <div class="parentlast"><a href="../">Projects</a></div>
-    <div class="current last">Emacs</div></nav><div id="main">
+<div class="current last">Emacs</div></nav><div id="main">
 <h2 class="page">Emacs</h2>
 <div class="chapter">
 <p>
-  Back to the Roots ... emacs ...
-  check out:
-  </p>
+Back to the Roots ... emacs ...
+check out:
+</p>
 <ul>
-    <li>
-      <a href="https://github.com/gizmomogwai/emacs_tutorial">
-        Small Tutorial about emacs.
-      </a>
-    </li>
-    <li>
-      <a href="https://github.com/gizmomogwai/gizmos_emacs_config_2">
-        My current emacs config. Subject to change :).
-      </a>
-    </li>
-    <li>
-      <a href="https://github.com/gizmomogwai/tff">
-        tff - a small Plugin to toggle between files (e.g. *.h -&gt; *.cpp -&gt; *_test.cpp)
-      </a>
-    </li>
-    <li>
-      <a href="https://github.com/gizmomogwai/bake-mode">bake-mode</a>
-       - a poor mans major mode for
-      <a href="https://github.com/esrlabs/bake">
-        Project.meta
-      </a>
-      files.
-    </li>
-    <li>
-      Right now I am trying to switch from terminals like Terminal.app or gnome-terminal to one of the emacs built in terminal emulators. There are several (shell, term, ansi-term, multi-term, eshell). First of all, here are my requirements:
-      <ul>
-        <li>
-          I want to select/copy/paste text with the keyboard, and the keyboard alone.
-        </li>
-        <li>
-          I want to use fzf.
-        </li>
-        <li>
-          I want to have my usual terminal navigations, including arrow up for history, tab for completion, ...
-        </li>
-        <li>
-          I need a clear scrollback.
-        </li>
-      </ul>
-    </li>
-  </ul>
+<li>
+<a href="https://github.com/gizmomogwai/emacs_tutorial">
+Small Tutorial about emacs.
+</a>
+</li>
+<li>
+<a href="https://github.com/gizmomogwai/gizmos_emacs_config_2">
+My current emacs config. Subject to change :).
+</a>
+</li>
+<li>
+<a href="https://github.com/gizmomogwai/tff">
+tff - a small Plugin to toggle between files (e.g. *.h -&gt; *.cpp -&gt; *_test.cpp)
+</a>
+</li>
+<li>
+<a href="https://github.com/gizmomogwai/bake-mode">bake-mode</a>
+ - a poor mans major mode for bake's
+<a href="https://github.com/esrlabs/bake">
+Project.meta
+</a>
+files.
+</li>
+<li>
+Right now I am trying to switch from terminals like Terminal.app or gnome-terminal to one of the emacs built in terminal emulators. There are several (shell, term, ansi-term, multi-term, eshell). First of all, here are my requirements:
+<ul>
+<li>
+I want to select/copy/paste text with the keyboard, and the keyboard alone.
+</li>
+<li>
+I want to use fzf.
+</li>
+<li>
+I want to have my usual terminal navigations, including arrow up for history, tab for completion, ...
+</li>
+<li>
+I need a clear scrollback.
+</li>
+</ul>
+</li>
+</ul>
+
 </div> </div>
-<footer>last modified: 2016-11-12 | <a id="toggle_disqus_thread" data-disqus-identifier="Emacs">Comments</a> | Tags <a href="../../sitemap/tags/#emacs" rel="tag">emacs</a>, <a href="../../sitemap/tags/#elisp" rel="tag">elisp</a>, <a href="../../sitemap/tags/#tutorial" rel="tag">tutorial</a>, <a href="../../sitemap/tags/#config" rel="tag">config</a>, <a href="../../sitemap/tags/#test" rel="tag">test</a>, <a href="../../sitemap/tags/#plugins" rel="tag">plugins</a></footer><div id="disqus_thread">
-      <script type="text/javascript">
-    var disqus_shortname = 'gizmomogwai';
-    (function () {
-      var s = document.createElement('script'); s.async = true;
-      s.type = 'text/javascript';
-      s.src = 'http://gizmomogwai.disqus.com/count.js';
-      (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-    }());
-  </script>
-      <script type="text/javascript">
-    var disqus_identifier = 'Emacs';
-    var disqus_shortname = 'gizmomogwai';
-    (function() {
-       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-       dsq.src = '//gizmomogwai.disqus.com/embed.js';
-       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-  </script>
-    </div>
-</div></body>
+<footer></footer>
+</div>
+</body>
 </html>

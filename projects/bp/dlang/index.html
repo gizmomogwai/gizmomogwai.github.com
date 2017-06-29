@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>"dlang"</title>
+<script src="../../../assets/jquery-1.7.2.min.js" type="text/javascript"></script>
+<script src="../../../assets/jquery.tagcanvas-1.17.1.min.js" type="text/javascript"></script>
+<link href="../../../assets/styles/style.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/styles/prism.css" rel="stylesheet" type="text/css">
+<meta charset="UTF-8" content="text/html; charset=UTF-8" http-equiv="content-type">
+<script type="text/javascript">
+$(document).ready(function() {
+$('canvas.tagCloud').tagcanvas({
+maxSpeed : 0.05,
+depth : 0.075,
+weightMode: 'both',
+weight: true,
+wheelZoom: true,
+weightGradient: {0:'#cc9393', 1:'#607835'}, // 0.33:'#e2e4cb', 0.66:'#b4cb8a',
+outlineColour: "#ffffff",
+outlineMethod: "colour"
+});
+});
+</script>
+</head>
+<body>
+<script src="../../../assets/prism.js" type="text/javascript"></script><div id="all">
+<nav><div class="parentfirst first"><a href="../../../">Home</a></div>
+<div class="parent"><a href="../../">Projects</a></div>
+<div class="parentlast"><a href="../">Best Practices</a></div>
+<div class="current last">dlang</div></nav><div id="main">
+<h2 class="page">dlang</h2>
+<div class="chapter">
+<p>
+<a href="https://dlang.org">dlang</a> is a fantastic language. Also in the last years the ecosystem evolved considerably. It brings many batteries included so lets describe a quick project setup:
+</p>
+<br>
+<a class="header">Project creation</a>
+<div class="chapter">
+dlang comes with <a href="https://code.dlang.org">dub</a> a package manager and buildsystem at the same time. This is now part of the reference compiler so you can start your project simply with <a href="https://code.dlang.org/getting_started"><code class="lang-javascript">dub init</code></a>. I suggest to add <a href="http://code.dlang.org/packages/unit-threaded">unit-threaded</a> as dependency to get a nice testing framework in place. The details can get tricky so I suggest to come up with several dub configurations:
+<ul>
+<li>
+application: if your module is an application this uses source/app.d to start your program
+</li>
+<li>
+library: if you want to reuse your module, make it a proper library.
+</li>
+<li>
+unittest: for me the following block works best:
+<pre><code class="lang-javascript">configuration "unittest" {
+  targetType "executable"
+  targetName "unittest"
+  buildOptions "coverage"
+
+  dependency "unit-threaded" version="==0.7.22"
+  preBuildCommands "dub run unit-threaded -c gen_ut_main -- -f gen/testsuite.d"
+  mainSourceFile "gen/testsuite.d"
+  excludedSourceFiles "source/app.d"
+}</code></pre>
+</li>
+<li>
+ut: for running quick unittests with unit-threaded:
+<pre><code class="lang-javascript">configuration "ut" {
+  targetType "executable"
+  targetName "ut"
+  buildOptions "coverage"
+
+  versions "unitThreadedLight"
+  dependency "unit-threaded" version="==0.7.22"
+  mainSourceFile "gen/testsuite.d"
+  excludedSourceFiles "source/app.d"
+}</code></pre>
+</li>
+</ul>
+With this enabled you can run <code class="lang-javascript">dub test -c ut || dub test</code> to get a quick feedback if all tests are green, and a detailed feedback if tests are red.
+By specifying coverage as build options you also get the dlang builtin coverage when running your tests (watch out for lst files).
+</div>
+</div> </div>
+<footer></footer>
+</div>
+</body>
+</html>

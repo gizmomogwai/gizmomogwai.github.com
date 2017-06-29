@@ -1,95 +1,68 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>"Cacher"</title>
-    <script src="../../../assets/jquery-1.7.2.min.js" type="text/javascript"></script>
-    <script src="../../../assets/jquery.tagcanvas-1.17.1.min.js" type="text/javascript"></script>
-    <link href="../../../assets/styles/style.css" rel="stylesheet" type="text/css">
-    <meta charset="UTF-8" content="text/html; charset=UTF-8" http-equiv="content-type">
-    <script type="text/javascript">
-      $(document).ready(function() {
-      $('canvas.tagCloud').tagcanvas({
-      maxSpeed : 0.05,
-      depth : 0.075,
-      weightMode: 'both',
-      weight: true,
-      wheelZoom: true,
-      weightGradient: {0:'#cc9393', 1:'#607835'}, // 0.33:'#e2e4cb', 0.66:'#b4cb8a',
-      outlineColour: "#ffffff",
-      outlineMethod: "colour"
-      });
-      });
-    </script>
-    <script type="text/javascript">
-      $(document).ready(function() {
-      $('#disqus_thread').hide();
-      });
-      $(document).ready(function() {
-      $('#toggle_disqus_thread').click(function() {
-      $('#disqus_thread').fadeToggle();
-      });
-      });
-    </script>
-    <script src="../../../assets/google-analytics-tracking.js" type="text/javascript"></script>
-  </head>
-  <body><div id="all">
+<head>
+<title>"Cacher"</title>
+<script src="../../../assets/jquery-1.7.2.min.js" type="text/javascript"></script>
+<script src="../../../assets/jquery.tagcanvas-1.17.1.min.js" type="text/javascript"></script>
+<link href="../../../assets/styles/style.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/styles/prism.css" rel="stylesheet" type="text/css">
+<meta charset="UTF-8" content="text/html; charset=UTF-8" http-equiv="content-type">
+<script type="text/javascript">
+$(document).ready(function() {
+$('canvas.tagCloud').tagcanvas({
+maxSpeed : 0.05,
+depth : 0.075,
+weightMode: 'both',
+weight: true,
+wheelZoom: true,
+weightGradient: {0:'#cc9393', 1:'#607835'}, // 0.33:'#e2e4cb', 0.66:'#b4cb8a',
+outlineColour: "#ffffff",
+outlineMethod: "colour"
+});
+});
+</script>
+</head>
+<body>
+<script src="../../../assets/prism.js" type="text/javascript"></script><div id="all">
 <nav><div class="parentfirst first"><a href="../../../">Home</a></div>
 <div class="parent"><a href="../../">Projects</a></div>
 <div class="parentlast"><a href="../">Android</a></div>
-    <div class="current last">Cacher</div></nav><div id="main">
+<div class="current last">Cacher</div></nav><div id="main">
 <h2 class="page">Cacher</h2>
 <div class="chapter">
 <a class="header">Story</a>
 <div class="chapter">
-  <p>
-    A new colleage at the office introduced us to the hobby of <a href="http://www.geocaching.com">geocaching</a> . Approximately at the same time, the first google dev phone got available. We both jumped onto the waggon and found the g1 to be a perfekt fit for paperless geocaching, with the one problem of no good geocaching application for the device.
-  </p>
-  <p>
-    Thats the story behind the cacher. The development got very busy towards the adc2 and we managed to get a comfortable app working.
-  </p>
-  <p>
-    Now the cacher has its own space at %a{:href=&gt;"http://www.tumblr.com/cacher"} and a solid userbase of 30 :-).
-  </p>
+<p>
+A new colleage at the office introduced us to the hobby of <a href="http://www.geocaching.com">geocaching</a> . Approximately at the same time, the first google dev phone got available. We both jumped onto the waggon and found the g1 to be a perfekt fit for paperless geocaching, with the one problem of no good geocaching application for the device.
+</p>
+<p>
+Thats the story behind the cacher. The development got very busy towards the adc2 and we managed to get a comfortable app working.
+</p>
+<p>
+Now the cacher has its own space at %a{:href=&gt;"http://www.tumblr.com/cacher"} and a solid userbase of 30 :-).
+</p>
 </div>
 <a class="header">Implementation</a>
 <div class="chapter">
-  <p>
-    We tried to implement the cacher in the most android like way we knew. So it uses or has support for:
-    </p>
+<p>
+We tried to implement the cacher in the most android like way we knew. So it uses or has support for:
+</p>
 <ul>
-      <li>Contentprovider for the locally stored geocaches.</li>
-      <li>Support for live folders (mapped to the tags you add to the geocaches).</li>
-      <li>Support for the quicksearch functionality of android.</li>
-      <li>Integrates with the barcode application to provide a way of sharing geocaches or the cacher himself with friends.</li>
-      <li>Gallery for each geocache, that is stored in the normal android picture gallery.</li>
-      <li>Naturally lots of maps, compass and gps functionality.</li>
-    </ul>
-  
+<li>Contentprovider for the locally stored geocaches.</li>
+<li>Support for live folders (mapped to the tags you add to the geocaches).</li>
+<li>Support for the quicksearch functionality of android.</li>
+<li>Integrates with the barcode application to provide a way of sharing geocaches or the cacher himself with friends.</li>
+<li>Gallery for each geocache, that is stored in the normal android picture gallery.</li>
+<li>Naturally lots of maps, compass and gps functionality.</li>
+</ul>
+
 </div>
 <a class="header">Sources</a>
 <div class="chapter">
-  The sources are located in my private svn repository which i access with git.
+The sources are located in my private svn repository which i access with git.
 </div>
 </div> </div>
-<footer>last modified: 2012-05-06 | <a id="toggle_disqus_thread" data-disqus-identifier="Cacher">Comments</a> | Tags <a href="../../../sitemap/tags/#android" rel="tag">android</a>, <a href="../../../sitemap/tags/#geocaching" rel="tag">geocaching</a>, <a href="../../../sitemap/tags/#gps" rel="tag">gps</a>, <a href="../../../sitemap/tags/#java" rel="tag">java</a></footer><div id="disqus_thread">
-      <script type="text/javascript">
-  var disqus_shortname = 'gizmomogwai';
-  (function () {
-    var s = document.createElement('script'); s.async = true;
-    s.type = 'text/javascript';
-    s.src = 'http://gizmomogwai.disqus.com/count.js';
-    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-  }());
-</script>
-      <script type="text/javascript">
-  var disqus_identifier = 'Cacher';
-  var disqus_shortname = 'gizmomogwai';
-  (function() {
-     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-     dsq.src = '//gizmomogwai.disqus.com/embed.js';
-     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
-</script>
-    </div>
-</div></body>
+<footer></footer>
+</div>
+</body>
 </html>

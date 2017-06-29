@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>"Android"</title>
+<script src="../../../assets/jquery-1.7.2.min.js" type="text/javascript"></script>
+<script src="../../../assets/jquery.tagcanvas-1.17.1.min.js" type="text/javascript"></script>
+<link href="../../../assets/styles/style.css" rel="stylesheet" type="text/css">
+<link href="../../../assets/styles/prism.css" rel="stylesheet" type="text/css">
+<meta charset="UTF-8" content="text/html; charset=UTF-8" http-equiv="content-type">
+<script type="text/javascript">
+$(document).ready(function() {
+$('canvas.tagCloud').tagcanvas({
+maxSpeed : 0.05,
+depth : 0.075,
+weightMode: 'both',
+weight: true,
+wheelZoom: true,
+weightGradient: {0:'#cc9393', 1:'#607835'}, // 0.33:'#e2e4cb', 0.66:'#b4cb8a',
+outlineColour: "#ffffff",
+outlineMethod: "colour"
+});
+});
+</script>
+</head>
+<body>
+<script src="../../../assets/prism.js" type="text/javascript"></script><div id="all">
+<nav><div class="parentfirst first"><a href="../../../">Home</a></div>
+<div class="parent"><a href="../../">Projects</a></div>
+<div class="parentlast"><a href="../">Best Practices</a></div>
+<div class="current last">Android</div></nav><div id="main">
+<h2 class="page">Android</h2>
+<div class="chapter">
+<a class="header">Tooling</a>
+<div class="chapter">
+<p>
+Whenever I return to android development after half a year, I need at least one day to get decent versions of all the needed component work nicely together. The most important (but not all) of these components are:
+</p>
+<ul>
+<li>Update android-sdk</li>
+<ul>
+<li>tools (the tools updater itself, emulator, ...)</li>
+<li>platform-tools (adb, fastboot, ...)</li>
+<li>build-tools (aapt, aidl, dx, zipalign. this version should be synced to build.gradle)</li>
+<li>sdk-platform (android sdk itself should be synced to build.gradle)</li>
+<li>android support repository</li>
+<li>android support library</li>
+</ul>
+<li>latest version of intellij</li>
+<li>update your gradle installation</li>
+</ul>
+
+<p>
+To get the best results I use almost always the latest stable versions. Only take rc's, betas, ... if you know exactly what you are doing. Most of the time you have to update them quite soon.
+</p>
+</div>
+<a class="header">Versioning</a>
+<div class="chapter">
+<p>
+As all sources are in git, I suggest to use the following scheme to version android. Keep the versions out of <code class="lang-javascrip">AndroidManifest.xml</code> and put them instead into build.gradle. Manage <code class="lang-javascript">versionCode</code> manually (or automate this in a release script), generate <code class="lang-javascript">versionName</code> by <code class="lang-javascript">git describe --dirty</code>. For git describe to work always, there has to be a tag in the repository. It does not work on a repository without tags.
+</p>
+<p>
+Minimal snippet of build.gradle to get this working:
+</p>
+<pre><code class="lang-groovy">...
+android {
+  defaultConfig {
+    versionCode 2
+    versionName "git describe --dirty".execute().text.trim();
+  }
+...
+</code></pre>
+</div>
+<a class="header">Module structure</a>
+<div class="chapter">
+<p>
+I suggest to divide the app into one part purely java and unit test this extensively, and another part that does all the android and ui specific glue code. In the best case this should not be too much on top of the real business logic.
+</p>
+<p>
+settings.gradle -
+just pulls in all the modules
+</p>
+<pre><code class="lang-groovy">include ':lib'
+include ':app'</code></pre>
+<p>
+lib/build.gradle -
+normal java project with 1.7 compatibility
+</p>
+<pre><code class="lang-groovy">...
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+...</code></pre>
+<p>
+app/build.gradle This is the most tricky one, I will go through step by step
+</p>
+<p>
+Android build tools are needed for the buildscript itself (this must be fitting for intellij's and gradle's versions):
+</p>
+<pre><code class="lang-groovy">...
+buildscript {
+  repositories {
+    jcenter()
+    mavenCentral()
+  }
+  dependencies {
+    classpath 'com.android.tools.build:gradle:2.3.3'
+  }
+}
+apply plugin: 'com.android.application'
+...</code></pre>
+<p>
+Pull in your libs:
+</p>
+<pre><code class="lang-groovy">...
+dependencies {
+  compile ...
+  annotationProcessor ...
+  compile project(':lib')
+}
+...</code></pre>
+<p></p>
+</div>
+<a class="header">Unit-Testing</a>
+<div class="chapter">
+<p>
+Because of the separation it is possible to do a lot of work with normal unit-tests. I did not look into android unit-testing in the last years, but it is supposed to be more evolved than to the android 1.0 time. Still I prefer to test as much as possible with normal junit tests.
+</p>
+<pre><code class="lang-groovy">...
+test {
+  testLogging {
+    showStandardStreams = true
+    exceptionFormat = 'full'
+  }
+}
+apply plugin: 'jacoco'
+jacocoTestReport {
+  reports {
+    html.enabled = true
+    xml.enabled = true
+    csv.enabled false
+  }
+}
+check.dependsOn jacocoTestReport
+...</code></pre>
+</div>
+<a class="header">Distinguing between debug and release versions</a>
+<div class="chapter">
+<p>
+the gradle android build is very sophisticated in producing different flavors and whatnot of the application. For simple application it is important to know, that you can deploy several versions to the target at the same time (e.g. one debug and one release version). To make it more easy to distinguing between them its possible to do adjustments like this in app/build.gradle:
+</p>
+<pre><code class="lang-groovy">...
+android {
+  buildTypes {
+    release {
+      applicationIdSuffix ".release"
+      resValue "string", "app_name", "Appname"
+    }
+    debug {
+      applicationIdSuffix ".debug"
+      resValue "string", "app_name", "Appname-Debug"
+    }
+  }
+...</code></pre>
+</div>
+<a class="header">Release to play-store</a>
+<div class="chapter">
+<p>
+Prerequisites:
+</p>
+<ul>
+<li>
+Various artwork
+</li>
+<li>
+Keystore for signing the apk. I suggest you use the <a href="https://developer.android.com/studio/publish/app-signing.html">Google Play App Signing</a>. There google creates and keeps a certificate for signing apps that you upload with your upload certificate. In case you loose the upload certificate, you can revoke this and put a new one to google play.
+</li>
+</ul>
+
+<p>
+Put the signing into gradle like described on the google page. The only twist I use is to store the password in the keychain/ring:
+</p>
+<pre><code class="lang-groovy">...
+// from http://stackoverflow.com/a/22597752
+def passwordFromKeychain = { name -&gt;
+  return "security find-generic-password -s ${name} -a ${name} -w".execute().text.trim();
+}
+android {
+  signingConfigs {
+    release {
+      // just add a new password with appname-play-store, appname-play-store and password in keychain on osx
+      storeFile file("store/release.keystore")
+      storePassword passwordFromKeychain("appname-play-store")
+      keyAlias "appname"
+      keyPassword passwordFromKeychain("appname-play-store")
+    }
+  }
+  buildTypes {
+    release {
+      signingConfig signingConfigs.release
+...</code></pre>
+</div>
+</div> </div>
+<footer></footer>
+</div>
+</body>
+</html>
