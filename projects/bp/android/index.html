@@ -41,23 +41,28 @@ $('#disqus_thread').fadeToggle();
 <div class="current last">Android-SDK-Setup</div></nav><div id="main">
 <h2 class="page">Android-SDK-Setup</h2>
 <div class="chapter">
-<a class="header">Tooling</a>
+<a class="header">Install android tooling</a>
 <div class="chapter">
 <p>
-Whenever I return to android development after half a year, I need at least one day to get decent versions of all the needed component work nicely together. The most important (but not all) of these components are:
+Whenever I return to android development after half a year, I need at least one day to get decent versions of all the needed component work nicely together. This time I started from scratch:
 </p>
 <ul>
-<li>Update android-sdk</li>
+<li>Set ANDROID_HOME to a empty directory</li>
+<li>Download the <a href="https://developer.android.com/studio/index.html">sdk</a> and only the sdk</li>
+<li><code class="lang-javascript">unzip -d $ANDROID_HOME ~/Downloads/sdk-tools-darwin/linux-version.zip</code></li>
+<li>In $ANDROID_HOME run <code class="lang-javascript">tools/bin/sdkmanager --licenses</code> to accept all current licenses</li>
+<li>In $ANDROID_HOME run <code class="lang-javascript">tools/bin/sdkmanager --update</code> to bring the tool itself uptodate</li>
+<li>
 <ul>
-<li>tools (the tools updater itself, emulator, ...)</li>
-<li>platform-tools (adb, fastboot, ...)</li>
-<li>build-tools (aapt, aidl, dx, zipalign. this version should be synced to build.gradle)</li>
-<li>sdk-platform (android sdk itself should be synced to build.gradle)</li>
-<li>android support repository</li>
-<li>android support library</li>
+<li>
+In $ANDROID_HOME run <code class="lang-javascript">tools/bin/sdkmanager packagenames</code> to install all needed packages
+</li>
+<li>
+For me: <code class="lang-javascript">tools/bin/sdkmanager "build-tools;26.0.0" "extras;android;m2repository" "platform-tools" "platforms;android-23"</code> followed by <code class="lang-javascript">tools/bin/sdkmanager --uninstall emulator</code> results in around 750GB of development tools needed for one of my current apps.
+</li>
 </ul>
-<li>latest version of intellij</li>
-<li>update your gradle installation</li>
+</li>
+<li>Download the newest intellij (I use the jetbrains toolbox) and start a new android project there</li>
 </ul>
 
 <p>
