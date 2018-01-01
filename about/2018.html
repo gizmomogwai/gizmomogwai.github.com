@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico"></link>
+    <style>
+      body {
+        font-family: 'Pacifico', cursive;
+        background: #000;
+      }
+      #image1 {
+        z-index: 0;
+      }
+
+      h1 {
+        color: #fff;
+        font-size: 50px;
+        text-shadow: 4px 4px 4px #aaa;
+      }
+
+      #image2 {
+        z-index: 1;
+      }
+
+      .abs {
+        position: absolute;
+        left: 0px;
+      }
+
+    </style>
+    <script language="javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+  </head>
+  <body>
+    <h1><center>Happy 2018</center></h1>
+    <div id="cover">
+      <div class="abs">
+        <img id="image1" class="abs" src="1.jpg" />
+        <img id="image2" class="abs" src="2.jpg" />
+      </div>
+    </div>
+
+    <script language="javascript">
+      $(document).ready(function() {
+        $('#cover').mousemove(function (e) {
+          var cursorX = e.clientX - $(this).offset().left;
+          var alpha = cursorX/$(this).width();
+          $("#image2").css("opacity", alpha);
+        });
+        $('#cover').on("touchmove", (function (e) {
+          var cursorX = e.clientX - $(this).offset().left;
+          var alpha = cursorX/$(this).width();
+          $("#image2").css("opacity", alpha);
+        }));
+      });
+    </script>
+  </body>
+</html>
