@@ -40,16 +40,16 @@
 
     <script language="javascript">
       $(document).ready(function() {
-        $('#cover').mousemove(function (e) {
+        $("#cover").mousemove(function (e) {
           var cursorX = e.clientX - $(this).offset().left;
           var alpha = cursorX/$(this).width();
           $("#image2").css("opacity", alpha);
         });
-        $('#cover').on("touchmove", (function (e) {
+        $("#cover").click(function(e) {
           var cursorX = e.clientX - $(this).offset().left;
-          var alpha = cursorX/$(this).width();
+          var alpha = cursorX / $(this).width();
           $("#image2").css("opacity", alpha);
-        }));
+        });
       });
     </script>
   </body>
