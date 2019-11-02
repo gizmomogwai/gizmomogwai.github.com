@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>"My homepage"</title>
+<title>"Futures"</title>
 <script src="../../../assets/jquery-1.7.2.min.js" type="text/javascript"></script>
 <script src="../../../assets/jquery.tagcanvas-1.17.1.min.js" type="text/javascript"></script>
 <script src="../../../assets/pagemap-1.2.0.min.js" type="text/javascript"></script>
@@ -58,45 +58,88 @@ interval: null
 <div id="all">
 <nav><div class="parentfirst first"><a href="../../../">Home</a></div>
 <div class="parent"><a href="../../">Projects</a></div>
-<div class="parentlast"><a href="../">Web</a></div>
-<div class="current last">My homepage</div></nav><div id="main">
-<h2 class="page">My homepage</h2>
-<div class="chapter">
-<a class="header">Story</a>
+<div class="parentlast"><a href="../">Best Practices</a></div>
+<div class="current last">Futures</div></nav><div id="main">
+<h2 class="page">Futures</h2>
 <div class="chapter">
 <p>
-Everyone need some kind of a homepage. This is mine.
+In the procedural cases, all functions are synchron, they return their result directly.
+In the futures cases, all functions return futures/promises.
 </p>
-</div>
-<a class="header">Technologies</a>
-<div class="chapter">
-<p>
-I wanted to use my favourite technologies, so this is the list of stuff used here:
-</p>
-<ul>
-<li>
-<a href="http://nanoc.stoneship.org/">nanoc</a> - for static site generation.</li>
-<li>
-<a href="http://haml-lang.com">haml</a> - as html-template engine.</li>
-<li>
-<a href="http://sass-lang.com">sass</a> - as css-helper.</li>
-<li>
-<a href="http://git-scm.com">git</a> - as version control system.</li>
-<li>
-<a href="http://pages.github.com">github:pages</a> - as host.</li>
-</ul>
-
-</div>
-<a class="header">Sources</a>
-<div class="chapter">
-The sources are located in a public <a href="https://github.com/gizmomogwai/www.flopcode.com">repository</a> at github.
-</div>
-<a class="header">Screenshots</a>
-<div class="chapter">
-If you are reading this, then you don't need screenshots :).
-</div>
+<table>
+<tr>
+<th>
+Description
+</th>
+<th>
+Procedural
+</th>
+<th>
+Futures
+</th>
+</tr>
+<tr>
+<td>
+Normal code with exception handling
+</td>
+<td>
+<pre><code class="lang-java">try {
+  auto v = f1();
+  return f2(v);
+} catch (Exception e) {
+  return f3();
+}</code></pre>
+</td>
+<td>
+<pre><code class="lang-java">return f1()
+  .thenCompose(v =&gt; f2(v))
+  .catchException(f3())
+</code></pre>
+</td>
+</tr>
+<tr>
+<td>
+Nesting
+</td>
+<td>
+<pre><code class="lang-java">return f1(f2(f3()));</code></pre>
+</td>
+<td>
+<pre><code class="lang-java">f3()
+  .then(v =&gt; f2(v))
+  .then(v =&gt; f1(v))</code></pre>
+</td>
+</tr>
+<tr>
+<td>Nested ifs</td>
+<td>
+<pre><code class="lang-java">if (f1()) {
+  return f2();
+} else if (f3()) {
+  return f4();
+} else {
+  return f5();
+}</code></pre>
+</td>
+<td>
+<pre><code class="lang-java">f1().thenCompose(v =&gt;
+    if (v) {
+      return f2();
+    } else {
+      return f3()
+        .thenCompose(v =&gt;
+           if (v) {
+             return f4();
+           } else {
+             return f5();
+           }
+         };
+    }</code></pre>
+</td>
+</tr>
+</table>
 </div> </div>
-<footer>last modified: 2017-06-29 | <a id="toggle_disqus_thread" data-disqus-identifier="My homepage">Comments</a> | Tags <a href="../../../sitemap/tags/#html" rel="tag">html</a>, <a href="../../../sitemap/tags/#jquery" rel="tag">jquery</a>, <a href="../../../sitemap/tags/#nanoc" rel="tag">nanoc</a>, <a href="../../../sitemap/tags/#git" rel="tag">git</a>, <a href="../../../sitemap/tags/#github" rel="tag">github</a>, <a href="../../../sitemap/tags/#rsync" rel="tag">rsync</a></footer><div id="disqus_thread">
+<footer>last modified: 2018-11-11 | <a id="toggle_disqus_thread" data-disqus-identifier="Futures">Comments</a> | Tags <a href="../../../sitemap/tags/#basics" rel="tag">basics</a>, <a href="../../../sitemap/tags/#best-practices" rel="tag">best-practices</a></footer><div id="disqus_thread">
 <script type="text/javascript">var disqus_shortname = 'gizmomogwai';
 (function () {
   var s = document.createElement('script'); s.async = true;
@@ -105,7 +148,7 @@ If you are reading this, then you don't need screenshots :).
   (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
 }());
 </script>
-<script type="text/javascript">var disqus_identifier = 'My homepage';
+<script type="text/javascript">var disqus_identifier = 'Futures';
 var disqus_shortname = 'gizmomogwai';
 (function() {
    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

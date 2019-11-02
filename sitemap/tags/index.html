@@ -4,6 +4,7 @@
 <title>"Tags"</title>
 <script src="../../assets/jquery-1.7.2.min.js" type="text/javascript"></script>
 <script src="../../assets/jquery.tagcanvas-1.17.1.min.js" type="text/javascript"></script>
+<script src="../../assets/pagemap-1.2.0.min.js" type="text/javascript"></script>
 <link href="../../assets/styles/style.css" rel="stylesheet" type="text/css">
 <link href="../../assets/styles/prism.css" rel="stylesheet" type="text/css">
 <meta charset="UTF-8" content="text/html; charset=UTF-8" http-equiv="content-type">
@@ -31,10 +32,30 @@ $('#disqus_thread').fadeToggle();
 });
 });
 </script>
+<script type="text/javascript">
+$(document).ready(function() {
+console.log(document.querySelector("a:visited"));
+pagemap(document.querySelector('#map'), {
+viewport: null,
+styles: {
+'nav,footer,div#main': 'rgba(0,0,0,0.08)',
+'div.chapter,h1,img': 'rgba(255,255,255,0.2)',
+'a.header,.page': getComputedStyle(document.querySelector("a.header"))["color"],
+'a[href]': getComputedStyle(document.querySelector("a[href]"))["color"],
+'h2,h3,h4': 'rgba(0,0,0,0.08)'
+},
+back: 'rgba(255,255,255,0.5)',
+view: 'rgba(0,0,0,0.05)',
+drag: 'rgba(0,0,0,0.10)',
+interval: null
+});
+});
+</script>
 <script src="../../assets/google-analytics-tracking.js" type="text/javascript"></script>
+<script integrity="sha384-6w2SekMzCkuMQ9sEbq0cLviD/yR2HfA/+ekmKiBnFlsoSvb/VmQFSi/umVShadQI" src="//instant.page/1.0.0" type="module"></script>
 </head>
 <body>
-<script src="../../assets/prism.js" type="text/javascript"></script><div id="all">
+<div id="all">
 <nav><div class="parentfirst first"><a href="../../">Home</a></div>
 <div class="parentlast"><a href="../">Sitemap</a></div>
 <div class="current last">Tags</div></nav><div id="main">
@@ -93,6 +114,15 @@ $('#disqus_thread').fadeToggle();
 <a href="../treemap/">Treemap</a>
 </div>
 <div class="chapter">
+<a name="basics">basics (5)</a>
+<br>
+<a href="../../projects/bp/">Best Practices</a>
+<a href="../../projects/bp/build/">Build</a>
+<a href="../../projects/bp/futures/">Futures</a>
+<a href="../../projects/eclipse/selectionview/">SelectionView</a>
+<a href="../../projects/bp/dlang/">dub</a>
+</div>
+<div class="chapter">
 <a name="plugins">plugins (5)</a>
 <br>
 <a href="../../projects/eclipse/adthelper/">ADT-Helper</a>
@@ -135,10 +165,10 @@ $('#disqus_thread').fadeToggle();
 <a href="../../projects/bp/dlang/">dub</a>
 </div>
 <div class="chapter">
-<a name="basics">basics (3)</a>
+<a name="best-practices">best-practices (3)</a>
 <br>
-<a href="../../projects/bp/">Best Practices</a>
-<a href="../../projects/eclipse/selectionview/">SelectionView</a>
+<a href="../../projects/bp/android/">Android-SDK-Setup</a>
+<a href="../../projects/bp/futures/">Futures</a>
 <a href="../../projects/bp/dlang/">dub</a>
 </div>
 <div class="chapter">
@@ -168,12 +198,6 @@ $('#disqus_thread').fadeToggle();
 <a href="../../projects/cocoa/">Cocoa</a>
 <a href="../../projects/cocoa/hexqlplugin/">Hex QL Plugin</a>
 <a href="../../projects/cocoa/zooomr/">Zooomr Picasa Plugin</a>
-</div>
-<div class="chapter">
-<a name="best-practices">best-practices (2)</a>
-<br>
-<a href="../../projects/bp/android/">Android-SDK-Setup</a>
-<a href="../../projects/bp/dlang/">dub</a>
 </div>
 <div class="chapter">
 <a name="d">d (2)</a>
@@ -222,9 +246,24 @@ $('#disqus_thread').fadeToggle();
 <a href="../../projects/android/networkbrowser/">Network Browser</a>
 </div>
 <div class="chapter">
+<a name="build">build (1)</a>
+<br>
+<a href="../../projects/bp/build/">Build</a>
+</div>
+<div class="chapter">
+<a name="building">building (1)</a>
+<br>
+<a href="../../projects/bp/build/">Build</a>
+</div>
+<div class="chapter">
 <a name="cloud">cloud (1)</a>
 <br>
 <a href="../cloud/">Cloud</a>
+</div>
+<div class="chapter">
+<a name="collaboration">collaboration (1)</a>
+<br>
+<a href="../../projects/os/">Open Source</a>
 </div>
 <div class="chapter">
 <a name="config">config (1)</a>
@@ -310,6 +349,11 @@ $('#disqus_thread').fadeToggle();
 <a name="objectivec">objectivec (1)</a>
 <br>
 <a href="../../projects/cocoa/hexqlplugin/">Hex QL Plugin</a>
+</div>
+<div class="chapter">
+<a name="open-sourc">open-sourc (1)</a>
+<br>
+<a href="../../projects/os/">Open Source</a>
 </div>
 <div class="chapter">
 <a name="parser">parser (1)</a>
@@ -415,22 +459,35 @@ $('#disqus_thread').fadeToggle();
 <a href="../../projects/android/switchoff/">Switch Off</a>
 </div>
 <div class="chapter">
-<a name="basics">basics (3)</a>
+<a name="basics">basics (5)</a>
 <br>
 <a href="../../projects/bp/">Best Practices</a>
+<a href="../../projects/bp/build/">Build</a>
+<a href="../../projects/bp/futures/">Futures</a>
 <a href="../../projects/eclipse/selectionview/">SelectionView</a>
 <a href="../../projects/bp/dlang/">dub</a>
 </div>
 <div class="chapter">
-<a name="best-practices">best-practices (2)</a>
+<a name="best-practices">best-practices (3)</a>
 <br>
 <a href="../../projects/bp/android/">Android-SDK-Setup</a>
+<a href="../../projects/bp/futures/">Futures</a>
 <a href="../../projects/bp/dlang/">dub</a>
 </div>
 <div class="chapter">
 <a name="bonjour">bonjour (1)</a>
 <br>
 <a href="../../projects/android/networkbrowser/">Network Browser</a>
+</div>
+<div class="chapter">
+<a name="build">build (1)</a>
+<br>
+<a href="../../projects/bp/build/">Build</a>
+</div>
+<div class="chapter">
+<a name="building">building (1)</a>
+<br>
+<a href="../../projects/bp/build/">Build</a>
 </div>
 <div class="chapter">
 <a name="cloud">cloud (1)</a>
@@ -443,6 +500,11 @@ $('#disqus_thread').fadeToggle();
 <a href="../../projects/cocoa/">Cocoa</a>
 <a href="../../projects/cocoa/hexqlplugin/">Hex QL Plugin</a>
 <a href="../../projects/cocoa/zooomr/">Zooomr Picasa Plugin</a>
+</div>
+<div class="chapter">
+<a name="collaboration">collaboration (1)</a>
+<br>
+<a href="../../projects/os/">Open Source</a>
 </div>
 <div class="chapter">
 <a name="config">config (1)</a>
@@ -605,6 +667,11 @@ $('#disqus_thread').fadeToggle();
 <a name="objectivec">objectivec (1)</a>
 <br>
 <a href="../../projects/cocoa/hexqlplugin/">Hex QL Plugin</a>
+</div>
+<div class="chapter">
+<a name="open-sourc">open-sourc (1)</a>
+<br>
+<a href="../../projects/os/">Open Source</a>
 </div>
 <div class="chapter">
 <a name="osx">osx (3)</a>
@@ -758,7 +825,7 @@ $('#disqus_thread').fadeToggle();
 (function () {
   var s = document.createElement('script'); s.async = true;
   s.type = 'text/javascript';
-  s.src = 'http://gizmomogwai.disqus.com/count.js';
+  s.src = 'https://gizmomogwai.disqus.com/count.js';
   (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
 }());
 </script>
@@ -772,5 +839,6 @@ var disqus_shortname = 'gizmomogwai';
 </script>
 </div>
 </div>
+<canvas id="map"></canvas>
 </body>
 </html>

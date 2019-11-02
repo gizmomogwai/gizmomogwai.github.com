@@ -4,6 +4,7 @@
 <title>"Hex QL Plugin"</title>
 <script src="../../../assets/jquery-1.7.2.min.js" type="text/javascript"></script>
 <script src="../../../assets/jquery.tagcanvas-1.17.1.min.js" type="text/javascript"></script>
+<script src="../../../assets/pagemap-1.2.0.min.js" type="text/javascript"></script>
 <link href="../../../assets/styles/style.css" rel="stylesheet" type="text/css">
 <link href="../../../assets/styles/prism.css" rel="stylesheet" type="text/css">
 <meta charset="UTF-8" content="text/html; charset=UTF-8" http-equiv="content-type">
@@ -31,10 +32,30 @@ $('#disqus_thread').fadeToggle();
 });
 });
 </script>
+<script type="text/javascript">
+$(document).ready(function() {
+console.log(document.querySelector("a:visited"));
+pagemap(document.querySelector('#map'), {
+viewport: null,
+styles: {
+'nav,footer,div#main': 'rgba(0,0,0,0.08)',
+'div.chapter,h1,img': 'rgba(255,255,255,0.2)',
+'a.header,.page': getComputedStyle(document.querySelector("a.header"))["color"],
+'a[href]': getComputedStyle(document.querySelector("a[href]"))["color"],
+'h2,h3,h4': 'rgba(0,0,0,0.08)'
+},
+back: 'rgba(255,255,255,0.5)',
+view: 'rgba(0,0,0,0.05)',
+drag: 'rgba(0,0,0,0.10)',
+interval: null
+});
+});
+</script>
 <script src="../../../assets/google-analytics-tracking.js" type="text/javascript"></script>
+<script integrity="sha384-6w2SekMzCkuMQ9sEbq0cLviD/yR2HfA/+ekmKiBnFlsoSvb/VmQFSi/umVShadQI" src="//instant.page/1.0.0" type="module"></script>
 </head>
 <body>
-<script src="../../../assets/prism.js" type="text/javascript"></script><div id="all">
+<div id="all">
 <nav><div class="parentfirst first"><a href="../../../">Home</a></div>
 <div class="parent"><a href="../../">Projects</a></div>
 <div class="parentlast"><a href="../">Cocoa</a></div>
@@ -81,7 +102,7 @@ The sources are located at <a href="https://github.com/gizmomogwai/hexql">github
 (function () {
   var s = document.createElement('script'); s.async = true;
   s.type = 'text/javascript';
-  s.src = 'http://gizmomogwai.disqus.com/count.js';
+  s.src = 'https://gizmomogwai.disqus.com/count.js';
   (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
 }());
 </script>
@@ -95,5 +116,6 @@ var disqus_shortname = 'gizmomogwai';
 </script>
 </div>
 </div>
+<canvas id="map"></canvas>
 </body>
 </html>
