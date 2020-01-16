@@ -77,34 +77,101 @@ combine both goals.
 <div class="chapter">
 <p>
 We all know that multitasking is evil. Every build that runs
-longer than 10s <a href="https://xkcd.com/303/&gt;enhances&lt;/a&gt;%0Athe%20chance%20that%20we%20drift%20off%20an%20start%20multitasking.%0A&lt;/p&gt;%0A&lt;/div&gt;%0A&lt;a%20class='header'&gt;Incremental&lt;/a&gt;%0A&lt;div%20class='chapter'&gt;&lt;/div&gt;%0A&lt;a%20class='header'&gt;Put%20version%20and%20build%20information%20into%20product&lt;/a&gt;%0A&lt;div%20class='chapter'&gt;&lt;/div&gt;%0A&lt;a%20class='header'&gt;Build%20releases%20from%20clean%20builds&lt;/a&gt;%0A&lt;div%20class='chapter'&gt;&lt;/div&gt;%0A&lt;a%20class='header'&gt;Make%20a%20clean%20build%20once%20a%20day&lt;/a&gt;%0A&lt;div%20class='chapter'&gt;&lt;/div&gt;%0A&lt;a%20class='header'&gt;Make%20workspace%20as%20small%20as%20possible&lt;/a&gt;%0A&lt;div%20class='chapter'&gt;&lt;/div&gt;%0A&lt;a%20class='header'&gt;Make%20your%20build%20correct&lt;/a&gt;%0A&lt;div%20class='chapter'&gt;&lt;/div&gt;%0A&lt;a%20class='header'&gt;Does%20your%20build%20delete%20" old files>
-<div class="chapter"></div>
+longer than 10s <a href="https://xkcd.com/303/&gt;enhances&lt;/a&gt;%0Athe%20chance%20that%20we%20drift%20off%20an%20start%20multitasking.%0A&lt;/p&gt;%0A&lt;/div&gt;%0A&lt;a%20class='header'&gt;Incremental&lt;/a&gt;%0A&lt;div%20class='chapter'&gt;&lt;/div&gt;%0A&lt;a%20class='header'&gt;Put%20version%20and%20build%20information%20into%20product&lt;/a&gt;%0A&lt;div%20class='chapter'&gt;%0A&lt;p&gt;%0AWhile%20a%20builddate%20is%20very%20convenient%20for%20humans%20to%20process%20it%0Ais%20a%20hard%20to%20do%20reproducible%20builds%20with%20this,%20unless%20you%20inject%0Athe%20date%20from%20the%20outside%20into%20the%20product.%20Inversion%20of%20control%0Ado%20not%20just%20call%20/usr/bin/date%20but%20let%20the%20buildserver%20prepare%0Athe%20date%20for%20you%20e.g.%20in%20an%20environment%20variable.%0A&lt;/p&gt;%0A&lt;/div&gt;%0A&lt;a%20class='header'&gt;Build%20releases%20from%20clean%20builds&lt;/a&gt;%0A&lt;div%20class='chapter'&gt;%0A&lt;p&gt;%0AJust%20to%20be%20on%20the%20safe%20side%20a%20release%20build%20should%20start%20from%0Ascratch.%0A&lt;/p&gt;%0A&lt;/div&gt;%0A&lt;a%20class='header'&gt;Make%20a%20clean%20build%20once%20a%20day&lt;/a&gt;%0A&lt;div%20class='chapter'&gt;%0A&lt;p&gt;%0AJust%20to%20make%20sure,%20that%20everything%20including%20licenses%20and%20os%0Aupdates%20still%20works%20as%20expected.%0A&lt;/p&gt;%0A&lt;/div&gt;%0A&lt;a%20class='header'&gt;Make%20workspace%20as%20small%20as%20possible&lt;/a&gt;%0A&lt;div%20class='chapter'&gt;%0A&lt;p&gt;%0ALess%20data%20is%20always%20better.%20Faster%20clones,%20less%20resources%20taken,%0Aopens%20the%20option%20to%20have%20more%20builds%20in%20parallel.%0A&lt;/p&gt;%0A&lt;p&gt;%0AMake%20it%20even%20smaller%20for%20the%20buildserver.%20It%20probably%20does%20not%0Aneed%20all%20the%20docs%20that%20you%20have%20checked%20in.%0A&lt;/p&gt;%0A&lt;/div&gt;%0A&lt;a%20class='header'&gt;Make%20your%20build%20correct&lt;/a&gt;%0A&lt;div%20class='chapter'&gt;%0A&lt;p&gt;%0AIf%20it%20behaves%20in%20unexpected%20ways,%20fix%20it.%0A&lt;/p&gt;%0A&lt;/div&gt;%0A&lt;a%20class='header'&gt;Does%20your%20build%20delete%20" old files>
+<div class="chapter">
+<p>
+Interesting example for incorrect builds.
+</p>
+</div>
 </a><a class="header">Clone shallow vs. Clone full</a>
 </p>
-<div class="chapter"></div>
-<a class="header">Keep the buildfile as small as possible - Keep the flow build clean release</a>
 <div class="chapter">
-or build test/stage deploy
+<p>
+Normally a buildserver is not interested in the history of the
+repository. On the other hand it needs some context, to show
+what was changed. For me the best option is a shallow clone,
+that can be also used to incrementally pull. Because a pull with
+not much changes will still be faster than a full shallow clone.
+</p>
+</div>
+<a class="header">Keep the buildfile as small as possible</a>
+<div class="chapter">
+<p>
+The build should be as simple as possible.
+e.g. make is better than make clean generate build test release
+</p>
+</div>
+<a class="header">All parties should use one buildfile</a>
+<div class="chapter">
+<p>
+The buildfile should work for all parties. Its a wide range from
+developers to buildservers. If all use the same, errors are
+found earlier on and the project makes sure that all important
+steps are in git.
+</p>
 </div>
 <a class="header">Bring your own tools</a>
 <div class="chapter">
-in workspace or with docker container
+<p>
+My first choice is to not depend on preinstalled tools but put
+everything into the workspace and make it self contained.
+Another option is using docker images, but this has another set
+of drawbacks.
+</p>
 </div>
 <a class="header">Try to avoid gaps/bridges between buildsystems</a>
-<div class="chapter"></div>
+<div class="chapter">
+<p>
+Every gap between different buildsystems makes the whole image
+less correct / efficient. E.g. recursive make considered
+harmful.
+</p>
+</div>
 <a class="header">Build out of source</a>
-<div class="chapter"></div>
+<div class="chapter">
+<p>
+Put all build artifacts to a common folder structure that is
+outside of the source folders. This makes your gitignore files
+very straight forward + you do not even need a clean buildstep,
+because you just can delete one folder.
+</p>
+</div>
 <a class="header">Keep your logs down</a>
-<div class="chapter"></div>
+<div class="chapter">
+<p>
+Make your buildlogs meaningful. Reduce warnings, remove debug
+output.
+</p>
+</div>
 <a class="header">Keep only what you need - aka jenkins archives</a>
-<div class="chapter"></div>
+<div class="chapter">
+<p>
+The results of a build should be as compact as possible.
+Saving everything without a requirement is not fast and not
+cheap.
+</p>
+</div>
 <a class="header">Let the buildserver scale your build</a>
-<div class="chapter"></div>
+<div class="chapter">
+<p>
+Do not hardcode -j16 or something into your build. This should
+be possible for the buildservers to decide. They know best what
+resources they have and how many parallel jobs they have to
+serve.
+</p>
+</div>
 <a class="header">Dirty but fast</a>
-<div class="chapter"></div>
+<div class="chapter">
+<p>
+A viable compromis might be to do some edges of the build in a
+dirty way, if it really brings speed. E.g. create dockerimages
+with a snapshot, so that not all work has to be done from
+scratch.
+</p>
+</div>
 
 </div> </div>
-<footer>last modified: 2019-03-17 | <a id="toggle_disqus_thread" data-disqus-identifier="Build">Comments</a> | Tags <a href="../../../sitemap/tags/#basics" rel="tag">basics</a>, <a href="../../../sitemap/tags/#build" rel="tag">build</a>, <a href="../../../sitemap/tags/#building" rel="tag">building</a></footer><div id="disqus_thread">
+<footer>last modified: 2019-11-07 | <a id="toggle_disqus_thread" data-disqus-identifier="Build">Comments</a> | Tags <a href="../../../sitemap/tags/#basics" rel="tag">basics</a>, <a href="../../../sitemap/tags/#build" rel="tag">build</a>, <a href="../../../sitemap/tags/#building" rel="tag">building</a></footer><div id="disqus_thread">
 <script type="text/javascript">var disqus_shortname = 'gizmomogwai';
 (function () {
   var s = document.createElement('script'); s.async = true;
